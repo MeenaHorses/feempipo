@@ -1,0 +1,139 @@
+.contact-container {
+  padding: 50px;
+  margin-top: 50px;
+}
+
+.contact-content {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  color: lightgray;
+}
+
+.contact-text-section {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  padding: 10px;
+  line-height: 2;
+  border: 1px solid gray;
+  border-radius: 10px;
+}
+.contact-text-section img {
+  height: auto;
+  width: 20px;
+}
+
+.contact-text-section h2 {
+  font-size: 2rem;
+  margin-bottom: 24px;
+  line-height: 1;
+}
+
+.contact-text-section p {
+  font-size: 18px;
+}
+
+.icon-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.contact-us-form {
+  height: 500px;
+  width: 100%;
+  border: 1px solid gray;
+  border-radius: 10px;
+}
+.contact-us-form form {
+  padding: 30px 20px;
+}
+
+label {
+  line-height: 2;
+  color: "lightgray";
+}
+.form-row {
+  display: flex;
+  flex: 1;
+  gap: 10px;
+  width: 100%;
+}
+.form-input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: black;
+  color: lightgray;
+  outline: none;
+  box-shadow: none;
+  resize: none;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:hover {
+  -webkit-box-shadow: 0 0 0 1000px black inset !important;
+  box-shadow: 0 0 0 1000px black inset !important;
+  -webkit-text-fill-color: lightgray !important;
+  transition: background-color 5000s ease-in-out 0s;
+  caret-color: lightgray !important;
+}
+
+.submit-button {
+  padding: 10px 20px;
+  background-color: #ffd93d;
+  border: none;
+  border-radius: 50px;
+  font-weight: bold;
+  cursor: pointer;
+  color: black;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #ffea70;
+  box-shadow: 0 4px 12px rgba(255, 217, 61, 0.5);
+}
+
+.success-msg {
+  margin-top: 10px;
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.contact-slide-in {
+  animation: slideInUp 0.6s ease forwards;
+  opacity: 0; /* prevent flash before animation */
+}
+
+/* For cross-browser compatibility */
+textarea::placeholder,
+input::placeholder {
+  font-family: "Montserrat", sans-serif;
+  color: dimgray;
+  opacity: 1;
+}
+
+@media (max-width: 1024px) {
+  .contact-content {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,197 @@
+.meet-the-team-container {
+  height: fit-content;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  padding: 20px;
+}
+.heading {
+  text-align: center;
+  font-size: 30px;
+}
+.team-profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.team-profiles {
+  height: 150px;
+  width: 150px;
+  overflow: hidden;
+  border-radius: 100%;
+  border: 1px solid green;
+}
+.team-roles {
+  line-height: 1;
+  padding: 5px;
+  margin-top: 5px;
+}
+.team-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.team-scroll-wrapper {
+  display: flex;
+  justify-content: center;
+  scroll-snap-type: x mandatory;
+  gap: 60px;
+  padding: 0 20px 50px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.team-scroll-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.team-member-card {
+  min-width: 150px;
+  flex-shrink: 0;
+  scroll-snap-align: center; /* ensures profile snaps to center */
+  text-align: center;
+}
+
+.profile-img {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+}
+.socials-image {
+  height: 22px;
+  width: 22px;
+}
+.x-image {
+  border: 1.4px solid white;
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+}
+.member-name {
+  margin-top: 8px;
+  font-weight: 500;
+}
+
+.member-role {
+  font-size: 12px;
+  margin-top: 3px;
+  color: #939191;
+}
+
+/* Scroll buttons */
+.scroll-button {
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+  background-color: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  padding: 5px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scroll-button.left {
+  left: 10px;
+}
+
+.scroll-button.right {
+  right: 10px;
+}
+
+.member-socials a {
+  color: #555;
+  font-size: 18px;
+  margin-top: 8px;
+  transition: color 0.3s, background-color 0.3s;
+  border-radius: 50%;
+  padding: 3px; /* adds some space for hover */
+  display: inline-flex; /* Centers the icon */
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  outline: none;
+}
+
+.member-socials a:hover,
+.member-socials a:focus {
+  background-color: #604e07; /* hover background color */
+  outline: none; /* Removes rectangle outline */
+}
+.meet-the-team-container {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.meet-the-team-container.reveal {
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (max-width: 1024px) {
+  /* Target iPad Air */
+  .team-scroll-wrapper {
+    gap: 30px;
+    flex-direction: column;
+    padding: 0 16px 40px; /* reduce padding even more for tablets */
+  }
+
+  .team-member-card {
+    min-width: 140px;
+  }
+
+  .member-role {
+    font-size: 14px;
+    margin-top: 3px;
+    color: #939191;
+  }
+  .socials-image {
+    height: 28px;
+    width: 28px;
+  }
+  .x-image {
+    border: 1.4px solid white;
+    border-radius: 50%;
+    height: 26px;
+    width: 26px;
+  }
+}
+@media (max-width: 768px) {
+  .team-scroll-wrapper {
+    gap: 30px;
+    padding: 0px 20px 40px 10px;
+  }
+
+  .team-member-card {
+    min-width: 120px;
+  }
+  .team-scroll-wrapper {
+    flex-direction: column;
+  }
+}
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  .team-member-card {
+    min-width: 120px;
+  }
+}
+@media (max-width: 480px) {
+  .team-scroll-wrapper {
+    gap: 20px;
+    padding: 0px 10px 30px 10px;
+  }
+
+  .team-member-card {
+    min-width: 100px;
+  }
+}

@@ -1,0 +1,286 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+body {
+  background-color: black;
+  color: white;
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+.feem-pipo-logo {
+  position: fixed;
+  top: 10px;
+  left: 25px;
+  padding: 30px 20px;
+  height: auto;
+  width: 130px;
+  transition: transform 0.1s ease-out;
+}
+.caption {
+  position: absolute;
+  top: 50%;
+  right: 45%;
+  width: 100%;
+  max-width: 80%;
+  text-align: center;
+}
+
+.caption-appear {
+  font-size: 50px;
+  width: 100%;
+  font-weight: bold;
+  white-space: nowrap;
+  margin-left: 20%;
+  font-size: clamp(24px, 5vw, 60px);
+}
+
+.caption-appear b {
+  color: #fff;
+}
+
+.caption-appear span {
+  color: #ffd93d;
+}
+
+.main-video-container {
+  background-color: transparent;
+  height: 100dvh;
+  width: 100%;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  position: relative;
+}
+
+.main-video-container video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.nav-list {
+  display: block;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding-top: 10px;
+  position: fixed;
+  top: 22px;
+  right: 35px;
+}
+
+.nav-list div {
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  gap: 15px;
+  line-height: 3;
+  margin-right: 5px;
+}
+
+.header-main-container {
+  padding-top: 10px;
+  background-color: transparent;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  position: fixed;
+  top: 0px;
+  left: 40px;
+  z-index: 1;
+}
+
+.back-button {
+  background: transparent;
+  border: none;
+  color: #ffd93d;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 8px 15px;
+  cursor: pointer;
+  border-radius: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  z-index: 1;
+  position: fixed;
+  top: 30px;
+  right: 45px;
+  outline: none;
+}
+
+.back-button:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.back-button img {
+  pointer-events: none; /* prevents the back img from taking focus */
+  width: 20px;
+  height: 20px;
+}
+
+.back-button:hover {
+  border: 1px solid #ffd93d;
+}
+
+/* Hide menu button on large screens */
+.menu-button {
+  display: none;
+}
+
+.menu-container {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding-top: 10px;
+}
+
+.menu-link {
+  text-decoration: none;
+  color: #ffd93d;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.menu-modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 250px;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.modal-menu-link {
+  color: #ffd93d;
+  font-size: 18px;
+  margin: 10px 0;
+  text-decoration: none;
+}
+.modal-menu-link:hover {
+  text-decoration: underline;
+}
+
+.close-button {
+  background: transparent;
+  border: none;
+  color: #ffd93d;
+  font-size: 24px;
+  align-self: flex-end;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .caption {
+    left: 35%;
+    transform: translate(-55%, -0%);
+  }
+  .caption-appear {
+    font-size: clamp(24px, 5vw, 40px);
+    margin-left: 0px;
+  }
+
+  .feem-pipo-logo {
+    width: 100px;
+    padding: 20px 10px 10px 0px;
+  }
+  .nav-list {
+    display: none;
+  }
+  .back-button {
+    top: 22px;
+    right: 10px;
+  }
+  .menu-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: transparent;
+    color: #ffd93d;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 15px;
+    cursor: pointer;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+  }
+  .menu-icon {
+    margin-left: 5px;
+  }
+}
+@media (max-width: 480px) {
+  .caption {
+    left: 30%;
+    transform: translate(-50%, -25%);
+  }
+  .caption-appear {
+    font-size: 35px;
+    white-space: normal;
+    margin-left: 10px;
+    font-size: clamp(8px, 5vw, 24px);
+  }
+  .feem-pipo-logo {
+    width: 70px;
+    top: 0;
+    left: 15px;
+  }
+
+  .menu-button {
+    padding-top: 10px;
+    padding-bottom: 15px;
+    padding-right: 5px;
+    right: 5px;
+    top: 8px;
+    font-weight: normal;
+  }
+  .menu-icon {
+    height: 18px;
+    width: 18px;
+  }
+  .back-button {
+    top: 10px;
+    right: 10px;
+    font-size: 12px;
+  }
+
+  .footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 25px;
+    text-align: center;
+  }
+
+  .footer-item {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .back-to-top {
+    order: 1; /* First */
+  }
+
+  .footer-item-follow {
+    order: 2; /* Second */
+  }
+
+  .footer-item-feem-pipo {
+    order: 3; /* Last */
+  }
+  .nav-list {
+    display: none;
+  }
+}
