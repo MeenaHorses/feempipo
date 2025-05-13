@@ -106,7 +106,7 @@ body {
   gap: 5px;
   z-index: 1;
   position: fixed;
-  top: 30px;
+  top: 35px;
   right: 45px;
   outline: none;
 }
@@ -151,7 +151,7 @@ body {
   position: fixed;
   top: 0;
   right: 0;
-  width: 250px;
+  width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.9);
   display: flex;
@@ -197,7 +197,7 @@ body {
     display: none;
   }
   .back-button {
-    top: 22px;
+    top: 25px;
     right: 10px;
   }
   .menu-button {
@@ -208,7 +208,7 @@ body {
     border: transparent;
     color: #ffd93d;
     font-size: 14px;
-    font-weight: bold;
+    font-weight: 600;
     padding: 15px;
     cursor: pointer;
     position: fixed;
@@ -220,36 +220,31 @@ body {
   }
 }
 @media (max-width: 480px) {
-  .caption {
-    left: 30%;
-    transform: translate(-50%, -25%);
+  .main-video-container video {
+    height: 60%;
   }
+
   .caption-appear {
-    font-size: 35px;
     white-space: normal;
-    margin-left: 10px;
-    font-size: clamp(8px, 5vw, 24px);
-  }
-  .feem-pipo-logo {
-    width: 70px;
-    top: 0;
-    left: 15px;
+    margin-left: 35px;
+    margin-top: 35px;
+    line-height: 1.5;
+    display: block;
+    font-size: clamp(12px, 5vw, 24px);
   }
 
   .menu-button {
     padding-top: 10px;
     padding-bottom: 15px;
     padding-right: 5px;
-    right: 5px;
-    top: 8px;
-    font-weight: normal;
+    right: 15px;
+    top: 15px;
+    font-size: 16px;
+    font-weight: 600;
   }
-  .menu-icon {
-    height: 18px;
-    width: 18px;
-  }
+
   .back-button {
-    top: 10px;
+    top: 22px;
     right: 10px;
     font-size: 12px;
   }

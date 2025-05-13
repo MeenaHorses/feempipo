@@ -4,7 +4,7 @@ export const CompanyDescription = () => {
   return (
     <div
       style={{
-        paddingTop: 70,
+        paddingTop: 40,
         paddingBottom: 30,
       }}
     >
@@ -14,9 +14,6 @@ export const CompanyDescription = () => {
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          // textAlign: "center",
-          // margin: 30,
-          // width: "70%",
         }}
       >
         <h2
@@ -56,8 +53,7 @@ export const CompanyDescription = () => {
             }}
           >
             We are recognised as a leading producer of first class media
-            contents including films, documentaries, commercials and event
-            videography.
+            contents including films, documentaries, and commercials.
           </p>
         </div>
       </div>
