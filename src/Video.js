@@ -17,8 +17,8 @@ export const Video = () => {
   return (
     <div className="main-video-container">
       <Header />
-      <video autoPlay loop>
-        <source src="/videos/WSOLTEASER.mp4" type="video/mp4" />
+      <video autoPlay loop muted>
+        <source src="/videos/WSOLTeaser.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 
