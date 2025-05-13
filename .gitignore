@@ -22,8 +22,7 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 *.mp4
+!public/videos/
 !public/videos/WSOLTeaser.mp4
-*.mp4
 *.mov
-*.mp4
-*.mov
+
