@@ -1,7 +1,9 @@
 .movies-container {
-  padding: 40px;
+  padding: 0px 40px 40px 40px;
 }
-
+.header-div {
+  margin: 20px 0px 0px 40px;
+}
 .header {
   font-size: 32px;
   margin-bottom: 40px;
@@ -61,4 +63,14 @@
   margin: 16px 0 8px;
   font-weight: 600;
   color: lightgray;
+}
+@media (max-width: 480px) {
+  .header-div {
+    padding-top: 20px;
+    margin: 0px;
+  }
+  .video-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+  }
 }

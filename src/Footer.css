@@ -57,3 +57,14 @@
   width: 15px;
   color: rgb(230, 227, 227);
 }
+.hide {
+  display: none;
+}
+
+@media (max-width: 480px) {
+  .hide {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+}

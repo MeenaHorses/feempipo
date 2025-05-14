@@ -8,12 +8,9 @@ body {
 }
 
 .feem-pipo-logo {
-  position: fixed;
-  top: 10px;
-  left: 25px;
   padding: 30px 20px;
   height: auto;
-  width: 130px;
+  width: 150px;
   transition: transform 0.1s ease-out;
 }
 .caption {
@@ -59,15 +56,7 @@ body {
 }
 
 .nav-list {
-  display: block;
-  flex: 1;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  padding-top: 10px;
-  position: fixed;
-  top: 22px;
-  right: 35px;
+  margin-right: 15px;
 }
 
 .nav-list div {
@@ -80,22 +69,27 @@ body {
 }
 
 .header-main-container {
-  padding-top: 10px;
+  width: 100%;
   background-color: transparent;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  position: fixed;
-  top: 0px;
-  left: 40px;
   z-index: 1;
+}
+
+.header-main-container {
+  background-color: black;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .back-button {
   background: transparent;
   border: none;
   color: #ffd93d;
-  font-size: 14px;
+  font-size: 18px;
   font-weight: bold;
   padding: 8px 15px;
   cursor: pointer;
@@ -103,11 +97,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 5px;
-  z-index: 1;
-  position: fixed;
-  top: 35px;
-  right: 45px;
+  gap: 10px;
+  margin-right: 45px;
   outline: none;
 }
 
@@ -158,6 +149,7 @@ body {
   flex-direction: column;
   align-items: center;
   padding: 20px;
+  z-index: 1;
 }
 
 .modal-menu-link {
@@ -191,7 +183,6 @@ body {
 
   .feem-pipo-logo {
     width: 100px;
-    padding: 20px 10px 10px 0px;
   }
   .nav-list {
     display: none;
@@ -199,6 +190,7 @@ body {
   .back-button {
     top: 25px;
     right: 10px;
+    font-size: 14px;
   }
   .menu-button {
     display: flex;
@@ -209,46 +201,11 @@ body {
     color: #ffd93d;
     font-size: 14px;
     font-weight: 600;
-    padding: 15px;
-    cursor: pointer;
-    position: fixed;
-    top: 10px;
-    right: 10px;
+    margin-right: 10px;
   }
   .menu-icon {
     margin-left: 5px;
   }
-}
-@media (max-width: 480px) {
-  .main-video-container video {
-    height: 60%;
-  }
-
-  .caption-appear {
-    white-space: normal;
-    margin-left: 35px;
-    margin-top: 35px;
-    line-height: 1.5;
-    display: block;
-    font-size: clamp(12px, 5vw, 24px);
-  }
-
-  .menu-button {
-    padding-top: 10px;
-    padding-bottom: 15px;
-    padding-right: 5px;
-    right: 15px;
-    top: 15px;
-    font-size: 16px;
-    font-weight: 600;
-  }
-
-  .back-button {
-    top: 22px;
-    right: 10px;
-    font-size: 12px;
-  }
-
   .footer {
     display: flex;
     flex-direction: column;
@@ -275,6 +232,33 @@ body {
   .footer-item-feem-pipo {
     order: 3; /* Last */
   }
+}
+@media (max-width: 480px) {
+  .main-video-container video {
+    height: 60%;
+  }
+  .feem-pipo-logo {
+    padding-left: 10px;
+  }
+  .caption-appear {
+    white-space: normal;
+    margin-left: 35px;
+    margin-top: 35px;
+    line-height: 1.5;
+    display: block;
+    font-size: clamp(12px, 5vw, 24px);
+  }
+
+  .menu-button {
+    padding-right: 5px;
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  .back-button {
+    margin: 0px;
+  }
+
   .nav-list {
     display: none;
   }

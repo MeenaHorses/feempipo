@@ -1,5 +1,9 @@
+.header-div {
+  margin: 20px 0px 0px 40px;
+}
+
 .documentaries-container {
-  padding: 40px;
+  padding: 0px 40px;
 }
 
 .documentaries-title {
@@ -111,4 +115,13 @@
   flex-wrap: wrap;
   justify-content: flex-start;
   gap: 6px;
+}
+@media (max-width: 480px) {
+  .header-div {
+    padding: 20px 0px 0px 20px;
+    margin: 0px;
+  }
+  .documentaries-container {
+    padding: 0px 20px;
+  }
 }

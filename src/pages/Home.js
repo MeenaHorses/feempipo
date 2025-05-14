@@ -1,31 +1,35 @@
 import React from "react";
 import { Video } from "../Video";
+import { Header } from "../Header";
 import { Footer } from "../Footer";
 import { CompanyDescription } from "../CompanyDescription";
 import { MeetTheTeam } from "./MeetTheTeam/MeetTheTeam";
 
 const Home = () => {
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        width: "100vw",
-        overflowX: "hidden",
-      }}
-    >
-      {/* Main container */}
-      <Video />
+    <>
+      <Header />
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          width: "100vw",
+          overflowX: "hidden",
+        }}
+      >
+        {/* Main container */}
+        <Video />
 
-      {/* Company Description */}
-      <CompanyDescription />
+        {/* Company Description */}
+        <CompanyDescription />
 
-      {/* MeetTheTeam */}
-      <MeetTheTeam />
+        {/* MeetTheTeam */}
+        <MeetTheTeam />
 
-      {/* footer */}
-      <Footer />
-    </div>
+        {/* footer */}
+        <Footer />
+      </div>
+    </>
   );
 };
 export default Home;

@@ -23,6 +23,17 @@ export const Footer = () => {
       {/* Follow */}
       <div className="footer-item-follow">
         <a
+          href={`https://www.youtube.com/@feempipo/`}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span>Subscribe on Youtube</span>
+          <img src={shareLogo} alt="Follow on instagram" />
+        </a>
+      </div>
+      {/* insta */}
+      <div className="footer-item-follow hide">
+        <a
           href={`https://www.instagram.com/feempipo/`}
           target="_blank"
           rel="noopener noreferrer"

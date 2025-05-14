@@ -12,30 +12,34 @@ const MoviesPage = () => {
   }, []);
 
   return (
-    <div className="movies-container">
-      <Header />
-      <h2 className="header">Movies</h2>
-      <div className="video-grid">
-        {videos.map((video, idx) => (
-          <div
-            key={idx}
-            className={`video-card ${loaded ? "slide-in" : ""}`}
-            style={{ transitionDelay: `${idx * 150}ms` }}
-          >
-            <div className="video-wrapper">
-              <iframe
-                src={video.url}
-                title={`Documentary ${idx}`}
-                allow="autoplay; encrypted-media"
-                allowFullScreen
-                className="video-iframe"
-              ></iframe>
-            </div>
-            <h3 className="movie-title">{video.title}</h3>
-          </div>
-        ))}
+    <>
+      <div className="header-div">
+        <Header />
       </div>
-    </div>
+      <div className="movies-container">
+        <h2 className="header">Movies</h2>
+        <div className="video-grid">
+          {videos.map((video, idx) => (
+            <div
+              key={idx}
+              className={`video-card ${loaded ? "slide-in" : ""}`}
+              style={{ transitionDelay: `${idx * 150}ms` }}
+            >
+              <div className="video-wrapper">
+                <iframe
+                  src={video.url}
+                  title={`Documentary ${idx}`}
+                  allow="autoplay; encrypted-media"
+                  allowFullScreen
+                  className="video-iframe"
+                ></iframe>
+              </div>
+              <h3 className="movie-title">{video.title}</h3>
+            </div>
+          ))}
+        </div>
+      </div>
+    </>
   );
 };
 

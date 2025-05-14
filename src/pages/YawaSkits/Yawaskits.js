@@ -12,30 +12,34 @@ const Yawaskits = () => {
   }, []);
 
   return (
-    <div className="documentaries-container">
-      <Header />
-      <h2 className="documentaries-title">Yawa Skits</h2>
-      <div className="documentary-grid">
-        {yawaSkits.map((doc, idx) => (
-          <div
-            key={idx}
-            className={`documentary-card ${loaded ? "slide-in" : ""}`}
-            style={{ transitionDelay: `${idx * 150}ms` }}
-          >
-            <div className="video-wrapper">
-              <iframe
-                src={doc.url}
-                title={`Documentary ${idx}`}
-                allow="autoplay; encrypted-media"
-                allowFullScreen
-                className="documentary-iframe"
-              ></iframe>
-            </div>
-            <h3 className="yawaskits-title">{doc.title}</h3>
-          </div>
-        ))}
+    <>
+      <div className="header-div">
+        <Header />
       </div>
-    </div>
+      <div className="documentaries-container">
+        <h2 className="documentaries-title">Yawa Skits</h2>
+        <div className="documentary-grid">
+          {yawaSkits.map((doc, idx) => (
+            <div
+              key={idx}
+              className={`documentary-card ${loaded ? "slide-in" : ""}`}
+              style={{ transitionDelay: `${idx * 150}ms` }}
+            >
+              <div className="video-wrapper">
+                <iframe
+                  src={doc.url}
+                  title={`Documentary ${idx}`}
+                  allow="autoplay; encrypted-media"
+                  allowFullScreen
+                  className="documentary-iframe"
+                ></iframe>
+              </div>
+              <h3 className="yawaskits-title">{doc.title}</h3>
+            </div>
+          ))}
+        </div>
+      </div>
+    </>
   );
 };
 

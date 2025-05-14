@@ -63,8 +63,9 @@ export const Header = () => {
                     textDecoration:
                       hoveredIndex === index ? "underline" : "none",
                     color: "#FFD93D",
-                    fontSize: 14,
+                    fontSize: 16,
                     fontWeight: "bold",
+                    textShadow: "1px 1px 2px black",
                   }}
                   onMouseEnter={() => setHoveredIndex(index)}
                   onMouseLeave={() => setHoveredIndex(null)}

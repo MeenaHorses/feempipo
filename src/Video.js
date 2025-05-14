@@ -1,7 +1,6 @@
 import React from "react";
 import "./App.css";
 import { useState, useEffect } from "react";
-import { Header } from "./Header";
 
 export const Video = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -16,7 +15,6 @@ export const Video = () => {
   }, []);
   return (
     <div className="main-video-container">
-      <Header />
       <video autoPlay loop muted playsInline>
         <source src="/videos/WSOLTeaser.mp4" type="video/mp4" />
         Your browser does not support the video tag.
