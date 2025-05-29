@@ -1,10 +1,5 @@
 export const yawaSkits = [
   {
-    url: "https://www.youtube.com/embed/s3XV8Dp4nfQ?&mute=1",
-    // thumbnail: "https://img.youtube.com/vi/z6ZOdg1g2N8/hqdefault.jpg",
-    title: "A DEADLY SEDUCTION (Yawaskits, Episode 204)",
-  },
-  {
     url: "https://www.youtube.com/embed/z8cUQoj7Bj8?&mute=1",
     // thumbnail: "https://img.youtube.com/vi/z6ZOdg1g2N8/hqdefault.jpg",
     title: "ROBIN HOOD CHRISTMAS (Yawaskits - Episode 292)",

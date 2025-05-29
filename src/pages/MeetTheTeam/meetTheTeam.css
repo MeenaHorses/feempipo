@@ -16,14 +16,17 @@
   align-items: center;
   justify-content: center;
 }
-
-.team-profiles {
+.profile-img-container {
   height: 150px;
   width: 150px;
   overflow: hidden;
-  border-radius: 100%;
-  border: 1px solid green;
+  position: relative;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
 .team-roles {
   line-height: 1;
   padding: 5px;
@@ -37,16 +40,9 @@
 
 .team-scroll-wrapper {
   display: flex;
+  align-items: center;
   justify-content: center;
-  scroll-snap-type: x mandatory;
-  gap: 60px;
-  padding: 0 20px 50px;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-
-.team-scroll-wrapper::-webkit-scrollbar {
-  display: none;
+  gap: 50px;
 }
 
 .team-member-card {
@@ -57,12 +53,15 @@
 }
 
 .profile-img {
-  height: 150px;
-  width: 150px;
-  border-radius: 50%;
-  object-fit: cover;
-  display: block;
-  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+  position: absolute;
+  top: 0;
+}
+.edit {
+  position: relative;
+  top: 25px;
+  width: 100%;
 }
 .socials-image {
   height: 22px;

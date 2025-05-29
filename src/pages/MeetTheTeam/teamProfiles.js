@@ -60,7 +60,21 @@ export const TeamProfiles = ({ teamMembers }) => {
       <div ref={scrollRef} className="team-scroll-wrapper">
         {teamMembers.map((member, idx) => (
           <div className="team-member-card" key={idx}>
-            <img src={member.image} alt={member.name} className="profile-img" />
+            <div className="profile-img-container">
+              {member.name !== "Simpa Samson" ? (
+                <img
+                  src={member.image}
+                  alt={member.name}
+                  className="profile-img"
+                />
+              ) : (
+                <img
+                  src={member.image}
+                  alt={member.name}
+                  className="profile-img edit"
+                />
+              )}
+            </div>
             <div className="member-name">{member.name}</div>
             <div className="member-role">{member.role}</div>
             <div className="member-socials">

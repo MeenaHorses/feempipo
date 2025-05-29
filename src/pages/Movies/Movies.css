@@ -5,8 +5,7 @@
   margin: 20px 0px 0px 40px;
 }
 .header {
-  font-size: 32px;
-  margin-bottom: 40px;
+  font-size: 30px;
   text-align: center;
 }
 
@@ -66,7 +65,6 @@
 }
 @media (max-width: 480px) {
   .header-div {
-    padding-top: 20px;
     margin: 0px;
   }
   .video-grid {

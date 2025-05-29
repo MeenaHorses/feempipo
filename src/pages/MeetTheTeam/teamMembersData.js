@@ -1,10 +1,13 @@
-import femaleAvatar from "../../images/profile_1.png";
-import maleAvatar from "../../images/profile_2.png";
+import chino from "../../images/Chino.jpg";
+import mrKassim from "../../images/MrKassim.jpg";
+import sifonOkoi from "../../images/Sifon.jpg";
+import focus from "../../images/Focus.jpg";
+import simpa from "../../images/Simpa.jpeg";
 
 export const teamMembers = [
   {
     name: "Kassim Braimah",
-    image: maleAvatar,
+    image: mrKassim,
     role: "CEO",
     socials: {
       instagram: "https://www.instagram.com/kassimbraimah/",
@@ -14,7 +17,7 @@ export const teamMembers = [
   },
   {
     name: "Sifon Okoi",
-    image: maleAvatar,
+    image: sifonOkoi,
     role: "Creative Director",
     socials: {
       instagram: "https://www.instagram.com/sifonokoi/",
@@ -24,7 +27,7 @@ export const teamMembers = [
   },
   {
     name: "Focus Idris",
-    image: maleAvatar,
+    image: focus,
     role: "Head of Content",
     socials: {
       instagram: "https://www.instagram.com/focus_idris/",
@@ -34,7 +37,7 @@ export const teamMembers = [
   },
   {
     name: "Simpa Samson",
-    image: maleAvatar,
+    image: simpa,
     role: "Head of Documentary",
     socials: {
       instagram: "https://www.instagram.com/saintonios/",
@@ -44,7 +47,7 @@ export const teamMembers = [
   },
   {
     name: "Chino Marchie",
-    image: femaleAvatar,
+    image: chino,
     role: "Head Writer",
     socials: {
       instagram: "https://www.instagram.com/iamchino_marchie/",
