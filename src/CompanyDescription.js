@@ -5,10 +5,8 @@ export const CompanyDescription = () => {
     <div
       style={{
         paddingTop: 40,
-        paddingBottom: 30,
       }}
     >
-      {/* pure (image)*/}
       <div
         style={{
           display: "flex",
@@ -16,27 +14,6 @@ export const CompanyDescription = () => {
           alignItems: "center",
         }}
       >
-        <h2
-          style={{
-            fontFamily: "fantasy",
-            color: "red",
-            fontSize: "40px",
-            margin: 0,
-            textAlign: "center",
-            lineHeight: 1.6,
-          }}
-        >
-          {/* Pure genius */}
-        </h2>
-        {/* fusing */}
-        <span
-          style={{
-            color: "white",
-            textAlign: "center",
-          }}
-        >
-          {/* Fusing technical magic with artistic flair */}
-        </span>
         {/* recognition */}
         <div
           style={{
@@ -49,11 +26,12 @@ export const CompanyDescription = () => {
             style={{
               fontSize: 22,
               color: "white",
-              lineHeight: 1.6,
+              lineHeight: 2,
             }}
           >
-            We are recognised as a leading producer of first class media
-            contents including films, documentaries, and commercials.
+            We are a collective of innovative multimedia professionals,
+            specializing in filmmaking and content creation. We deliver
+            top-notch movies and series that captivate audiences worldwide.
           </p>
         </div>
       </div>

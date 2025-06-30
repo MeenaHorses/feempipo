@@ -1,40 +1,10 @@
-import { useRef, useState, useEffect } from "react";
-import rightArrow from "../../icons/right-arrow-backup-2-svgrepo-com.svg";
-import leftArrow from "../../icons/navigation-back-arrow-svgrepo-com.svg";
+import { useRef, useEffect } from "react";
 import xIcon from "../../icons/xIcon.svg";
 import instagramIcon from "../../icons/instagram-svgrepo-com.svg";
 import "./meetTheTeam.css";
 
 export const TeamProfiles = ({ teamMembers }) => {
   const scrollRef = useRef(null);
-  const [canScrollLeft, setCanScrollLeft] = useState(false);
-  const [canScrollRight, setCanScrollRight] = useState(true);
-
-  const checkScroll = () => {
-    const el = scrollRef.current;
-    if (el) {
-      setCanScrollLeft(el.scrollLeft > 0);
-      setCanScrollRight(el.scrollWidth - el.scrollLeft > el.clientWidth + 5);
-    }
-  };
-
-  const scrollByAmount = 180; // width + gap
-
-  const scrollLeft = () => {
-    scrollRef.current?.scrollBy({ left: -scrollByAmount, behavior: "smooth" });
-  };
-
-  const scrollRight = () => {
-    scrollRef.current?.scrollBy({ left: scrollByAmount, behavior: "smooth" });
-  };
-
-  useEffect(() => {
-    const el = scrollRef.current;
-    if (!el) return;
-    el.addEventListener("scroll", checkScroll);
-    checkScroll();
-    return () => el.removeEventListener("scroll", checkScroll);
-  }, []);
 
   useEffect(() => {
     const section = document.querySelector(".meet-the-team-container");
@@ -100,17 +70,6 @@ export const TeamProfiles = ({ teamMembers }) => {
           </div>
         ))}
       </div>
-
-      {canScrollLeft && (
-        <div className="scroll-button left" onClick={scrollLeft}>
-          <img src={leftArrow} alt="back arrow" height={30} width={30} />
-        </div>
-      )}
-      {canScrollRight && (
-        <div className="scroll-button right" onClick={scrollRight}>
-          <img src={rightArrow} alt="right arrow" height={30} width={30} />
-        </div>
-      )}
     </div>
   );
 };
