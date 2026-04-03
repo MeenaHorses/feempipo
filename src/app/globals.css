@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+:root {
+  --primary: #f5cd05;
+  --background-light: #f8f8f5;
+  --background-dark: #23200f;
+}
+
+body {
+  background-color: var(--background-dark);
+  color: rgb(241 245 249);
+}
+
+.bg-abstract-motion {
+  background-color: #23200f;
+  position: relative;
+  overflow: hidden;
+}
+
+.blob-1 {
+  position: absolute;
+  top: -10%;
+  right: -5%;
+  width: 60vw;
+  height: 60vw;
+  background: radial-gradient(
+    circle,
+    rgba(245, 205, 5, 0.15) 0%,
+    rgba(245, 205, 5, 0) 70%
+  );
+  filter: blur(80px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.blob-2 {
+  position: absolute;
+  bottom: 10%;
+  left: -10%;
+  width: 50vw;
+  height: 50vw;
+  background: radial-gradient(
+    circle,
+    rgba(219, 198, 123, 0.1) 0%,
+    rgba(219, 198, 123, 0) 70%
+  );
+  filter: blur(100px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+}
+
+input.contact-field,
+textarea.contact-field {
+  color-scheme: dark;
+}
+
+input.contact-field:-webkit-autofill,
+input.contact-field:-webkit-autofill:hover,
+input.contact-field:-webkit-autofill:focus,
+input.contact-field:-webkit-autofill:active,
+textarea.contact-field:-webkit-autofill,
+textarea.contact-field:-webkit-autofill:hover,
+textarea.contact-field:-webkit-autofill:focus,
+textarea.contact-field:-webkit-autofill:active {
+  -webkit-text-fill-color: rgb(241 245 249) !important;
+  caret-color: rgb(241 245 249);
+  -webkit-box-shadow: 0 0 0 1000px #27271f inset !important;
+  box-shadow: 0 0 0 1000px #27271f inset !important;
+  background-color: #27271f !important;
+  transition: background-color 99999s ease-out 0s;
+}
