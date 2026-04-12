@@ -25,6 +25,7 @@ yarn-error.log*
 *.mp4
 !public/videos/
 !public/videos/WSOLTeaser.mp4
+!public/videos/hero.mp4
 *.mov
 
 
