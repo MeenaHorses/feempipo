@@ -51,20 +51,42 @@ const TEAM_MEMBERS = [
   },
 ];
 
+/** Same footprint for every card (Founder matches the team). */
+const CARD_BOX =
+  "h-[min(28rem,70vh)] min-h-[22rem] sm:min-h-[28rem] lg:h-[31.25rem]";
+
+/** lg: 6 cols → row1 three × span-2; row2 two × span-2 starting at col 2 and 4 (centered under the three). */
+function cardGridPlacement(index) {
+  if (index < 3) return "lg:col-span-2";
+  if (index === 3) return "lg:col-span-2 lg:col-start-2";
+  return "lg:col-span-2 lg:col-start-4";
+}
+
+/** Same cover + hover zoom for all; Simpa’s file has extra ceiling—shift focal point only (no extra scale). */
+function imageClass(member) {
+  const base =
+    "absolute inset-0 h-full w-full object-cover origin-top transition-transform duration-700 grayscale group-hover:scale-105 group-hover:grayscale-0";
+  if (member.name === "Simpa Samson") {
+    return `${base} object-[50%_42%] sm:object-[50%_40%]`;
+  }
+  return `${base} object-top`;
+}
+
 export default function MeetTheTeamPage() {
   return (
     <div className="min-h-screen text-[#eae2d0]">
       <SiteHeader />
-      <main className="mx-auto max-w-7xl px-6 pb-20 pt-20">
+      <main className="mx-auto max-w-7xl px-6 pb-20 pt-28 md:pt-32">
+        {/* Hero — matches reference typography & grid */}
         <section className="mb-24">
           <div className="grid grid-cols-1 items-end gap-12 lg:grid-cols-12">
             <div className="lg:col-span-8">
-              <h1 className="mb-8 text-6xl leading-[0.9] font-black tracking-tighter text-[#f5cd05] uppercase md:text-7xl">
+              <h1 className="mb-8 text-5xl font-black leading-[0.9] tracking-tighter text-[#f5cd05] uppercase sm:text-6xl md:text-7xl lg:text-8xl">
                 THE CREATIVE <br />
                 FORCE BEHIND <br />
                 FEEMPIPO.
               </h1>
-              <p className="max-w-2xl text-xl leading-relaxed font-medium text-[#d0c6ab] md:text-xl">
+              <p className="max-w-2xl text-lg font-medium leading-relaxed text-[#d0c6ab] md:text-xl lg:text-2xl">
                 At Feempipo, filmmaking is a collaborative art. From concept to
                 screen, our talented team combines creativity, technical
                 expertise, and passion for storytelling.
@@ -73,67 +95,75 @@ export default function MeetTheTeamPage() {
           </div>
         </section>
 
-        <section className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {TEAM_MEMBERS.map((member) => (
-            <article
+        {/* 3 cards top row, 2 centered on bottom (lg+); uniform cards */}
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-6">
+          {TEAM_MEMBERS.map((member, index) => (
+            <div
               key={member.name}
-              className="group flex flex-col items-center text-center"
+              className={`group relative overflow-hidden rounded-xl bg-[#2e2a1e] ${CARD_BOX} ${cardGridPlacement(index)}`}
             >
-              <div className="relative mb-6 h-64 w-64">
-                <div className="absolute inset-0 rounded-full bg-[#f5cd05]/20 blur-2xl transition-all group-hover:bg-[#f5cd05]/30" />
-                <img
-                  src={member.image}
-                  alt={member.name}
-                  className="relative h-full w-full rounded-full border-4 border-[#393528] object-cover object-[center_20%] shadow-2xl transition-transform duration-500 group-hover:scale-105"
-                />
-              </div>
-              <span className="mb-2 text-xs font-bold tracking-widest text-[#f5cd05] uppercase">
-                {member.role}
-              </span>
-              <h2 className="mb-2 text-3xl font-black tracking-tighter text-white uppercase">
-                {member.name}
-              </h2>
-              <div className="flex space-x-4">
-                <a
-                  href={member.instagram}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-[#f5cd05] transition-colors hover:text-white"
-                  aria-label={`${member.name} Instagram`}
-                >
-                  <svg viewBox="0 0 24 24" className="h-5 w-5 fill-current">
-                    <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm9.5 2a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3ZM12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10Zm0 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6Z" />
-                  </svg>
-                </a>
-                {member.x ? (
+              <img
+                src={member.image}
+                alt={member.name}
+                className={imageClass(member)}
+              />
+              <div
+                className="absolute inset-0 bg-gradient-to-t from-[#23200f] to-transparent opacity-90"
+                aria-hidden
+              />
+              <div className="absolute bottom-0 left-0 w-full p-6 sm:p-8">
+                <span className="mb-2 block text-xs font-bold tracking-widest text-[#f5cd05] uppercase">
+                  {member.role}
+                </span>
+                <h3 className="mb-2 text-2xl font-black tracking-tighter text-white uppercase sm:text-3xl">
+                  {member.name}
+                </h3>
+                <p className="mb-4 text-pretty text-sm leading-relaxed text-[#d0c6ab] sm:text-[0.9375rem]">
+                  {member.bio}
+                </p>
+                <div className="flex space-x-4">
                   <a
-                    href={member.x}
+                    href={member.instagram}
                     target="_blank"
                     rel="noreferrer"
-                    className="text-[#f5cd05] transition-colors hover:text-white"
-                    aria-label={`${member.name} X`}
+                    className="text-[#f5cd05] transition-transform hover:scale-110"
+                    aria-label={`${member.name} Instagram`}
                   >
-                    <svg viewBox="0 0 24 24" className="h-5 w-5 fill-current">
-                      <path d="M18.9 2H22l-6.9 7.9L23 22h-6.2l-4.9-6.6L6 22H2.9l7.4-8.5L1 2h6.3l4.4 6L18.9 2Zm-1.1 18h1.7L6.2 3.9H4.4L17.8 20Z" />
+                    <svg viewBox="0 0 24 24" className="h-6 w-6 fill-current">
+                      <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm9.5 2a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3ZM12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10Zm0 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6Z" />
                     </svg>
                   </a>
-                ) : null}
+                  {member.x ? (
+                    <a
+                      href={member.x}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="text-[#f5cd05] transition-transform hover:scale-110"
+                      aria-label={`${member.name} X`}
+                    >
+                      <svg viewBox="0 0 24 24" className="h-6 w-6 fill-current">
+                        <path d="M18.9 2H22l-6.9 7.9L23 22h-6.2l-4.9-6.6L6 22H2.9l7.4-8.5L1 2h6.3l4.4 6L18.9 2Zm-1.1 18h1.7L6.2 3.9H4.4L17.8 20Z" />
+                      </svg>
+                    </a>
+                  ) : null}
+                </div>
               </div>
-            </article>
+            </div>
           ))}
-        </section>
+        </div>
 
-        <section className="mt-32 flex flex-col items-center rounded-2xl bg-[#f5cd05] p-12 text-center">
-          <h3 className="mb-4 text-4xl font-black tracking-tighter text-[#23200f] uppercase md:text-5xl">
+        {/* Join callout — surface-container-highest, primary CTA button */}
+        <section className="mt-32 flex flex-col items-center rounded-xl bg-[#393528] p-10 text-center sm:p-12">
+          <h2 className="mb-4 text-3xl font-black tracking-tighter text-white uppercase sm:text-4xl">
             Be Part of the Story
-          </h3>
-          <p className="mb-8 max-w-lg text-lg text-[#23200f]">
+          </h2>
+          <p className="mb-8 max-w-lg text-[#d0c6ab]">
             We&apos;re always looking for visionary creators and technical
             wizards to join our growing studio.
           </p>
           <a
             href="mailto:Feempipo@gmail.com"
-            className="rounded-xl bg-[#23200f] px-10 py-4 font-black tracking-tighter text-[#f5cd05] uppercase shadow-lg shadow-[#f5cd05]/20 transition-transform hover:scale-105"
+            className="rounded-xl bg-[#f5cd05] px-8 py-4 font-black tracking-tighter text-[#23200f] uppercase transition-transform hover:scale-105 active:scale-95"
           >
             Contact Us
           </a>
