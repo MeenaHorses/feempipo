@@ -11,7 +11,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "optimize:hero": "bash scripts/optimize-hero-video.sh"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.1.13",

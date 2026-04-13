@@ -64,9 +64,18 @@ export default function HomePageContent() {
                     muted
                     loop
                     playsInline
-                    poster="/images/hero-video-poster.png"
+                    preload="metadata"
+                    poster="/images/hero-video-poster.jpg"
                   >
-                    <source src="/videos/hero.mp4" type="video/mp4" />
+                    <source
+                      src="/videos/hero.mp4"
+                      type="video/mp4"
+                      media="(min-width: 768px)"
+                    />
+                    <source
+                      src="/videos/hero-mobile.mp4"
+                      type="video/mp4"
+                    />
                   </video>
                 </div>
               </div>
