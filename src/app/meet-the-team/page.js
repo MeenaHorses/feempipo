@@ -76,7 +76,7 @@ export default function MeetTheTeamPage() {
   return (
     <div className="min-h-screen text-[#eae2d0]">
       <SiteHeader />
-      <main className="mx-auto max-w-7xl px-6 pb-20 pt-28 md:pt-32">
+      <main className="mx-auto max-w-7xl px-6 pb-20 pt-12">
         {/* Hero — matches reference typography & grid */}
         <section className="mb-24">
           <div className="grid grid-cols-1 items-end gap-12 lg:grid-cols-12">
