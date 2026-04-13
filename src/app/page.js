@@ -15,6 +15,14 @@ export const metadata = {
     url: SITE,
     locale: "en_US",
     siteName: "Feempipo",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Feempipo — premium African movies, series, and comedy",
+      },
+    ],
     videos: [
       {
         url: `${SITE}/videos/hero.mp4`,
@@ -29,6 +37,7 @@ export const metadata = {
     title: "Feempipo | Premium African Movies, Series & Comedy",
     description:
       "Premium African movies, series, documentaries, and comedy from Feempipo.",
+    images: ["/og-image.jpg"],
   },
 };
 
