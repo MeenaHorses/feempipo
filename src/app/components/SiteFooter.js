@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import feemPipoLogo from "../../logos/feempipoLogo_cropped.png";
 
 export default function SiteFooter() {
@@ -8,7 +9,14 @@ export default function SiteFooter() {
         <div className="mb-12 grid grid-cols-1 gap-10 md:grid-cols-4">
           <div>
             <div className="mb-4 flex items-center">
-              <img src={feemPipoLogo.src} alt="feem pipo" className="h-auto w-40 object-contain" />
+              <div className="w-40">
+                <Image
+                  src={feemPipoLogo}
+                  alt="feem pipo"
+                  className="h-auto w-full object-contain"
+                  loading="lazy"
+                />
+              </div>
             </div>
             <p className="text-sm text-slate-400">Creatives in Motion</p>
             <div className="mt-4 flex items-start gap-4">

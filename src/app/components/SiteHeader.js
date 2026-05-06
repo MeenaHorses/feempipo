@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import feemPipoLogo from "../../logos/feempipoLogo_cropped.png";
@@ -52,17 +53,19 @@ export default function SiteHeader() {
     <header className="sticky top-0 z-50 w-full border-b border-[#f5cd05]/20 bg-[#23200f]">
       <div className="mx-auto flex h-20 max-w-[1500px] items-center justify-between gap-4 px-2 sm:px-4 lg:px-6">
         <Link href="/" className="flex items-center" aria-label="Feempipo home">
-          <img
-            src={feemPipoLogo.src}
-            alt="feem pipo"
-            className="h-auto w-44 object-contain sm:w-52"
-            style={{
-              transform: `translate(${offset.x}px, ${offset.y}px)`,
-              transition: "transform 0.1s ease-out"
-            }}
-            onMouseMove={handleLogoMouseMove}
-            onMouseLeave={resetLogoOffset}
-          />
+          <div className="w-44 sm:w-52">
+            <Image
+              src={feemPipoLogo}
+              alt="feem pipo"
+              className="h-auto w-full object-contain"
+              style={{
+                transform: `translate(${offset.x}px, ${offset.y}px)`,
+                transition: "transform 0.1s ease-out"
+              }}
+              onMouseMove={handleLogoMouseMove}
+              onMouseLeave={resetLogoOffset}
+            />
+          </div>
         </Link>
 
         <nav className="hidden items-center gap-5 md:flex" aria-label="Main">

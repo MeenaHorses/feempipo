@@ -20,7 +20,7 @@ export default function HomePageContent() {
           observer.disconnect();
         }
       },
-      { rootMargin: "200px 0px" },
+      { rootMargin: "0px" },
     );
 
     observer.observe(videoContainerRef.current);
@@ -42,7 +42,7 @@ export default function HomePageContent() {
             <Image
               alt="Cinematic production background"
               className="h-full w-full object-cover opacity-40"
-              src="/images/hero-bg.webp"
+              src="/images/hero-video-poster.jpg"
               fill
               priority
               sizes="100vw"
@@ -90,11 +90,11 @@ export default function HomePageContent() {
                   {shouldLoadVideo ? (
                     <video
                       className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      autoPlay
                       muted
                       loop
                       playsInline
-                      controls
-                      preload="none"
+                      preload="metadata"
                       poster="/images/hero-video-poster.jpg"
                     >
                       <source
@@ -105,21 +105,14 @@ export default function HomePageContent() {
                       <source src="/videos/hero-mobile.mp4" type="video/mp4" />
                     </video>
                   ) : (
-                    <button
-                      type="button"
-                      className="relative h-full w-full"
-                      onClick={() => setShouldLoadVideo(true)}
-                      aria-label="Load hero video"
-                    >
-                      <Image
-                        src="/images/hero-video-poster.jpg"
-                        alt="Hero video poster"
-                        fill
-                        className="object-cover transition-transform duration-700 group-hover:scale-105"
-                        sizes="(min-width: 1024px) 55vw, 100vw"
-                        loading="lazy"
-                      />
-                    </button>
+                    <Image
+                      src="/images/hero-video-poster.jpg"
+                      alt="Hero video poster"
+                      fill
+                      className="object-cover transition-transform duration-700 group-hover:scale-105"
+                      sizes="(min-width: 1024px) 55vw, 100vw"
+                      loading="eager"
+                    />
                   )}
                 </div>
               </div>
