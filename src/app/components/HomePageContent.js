@@ -1,10 +1,33 @@
 "use client";
 
+import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import SiteHeader from "./SiteHeader";
 import SiteFooter from "./SiteFooter";
 
 export default function HomePageContent() {
+  const videoContainerRef = useRef(null);
+  const [shouldLoadVideo, setShouldLoadVideo] = useState(false);
+
+  useEffect(() => {
+    if (!videoContainerRef.current || shouldLoadVideo) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setShouldLoadVideo(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "200px 0px" },
+    );
+
+    observer.observe(videoContainerRef.current);
+
+    return () => observer.disconnect();
+  }, [shouldLoadVideo]);
+
   return (
     <div className="font-display text-slate-100 antialiased">
       <SiteHeader />
@@ -16,10 +39,13 @@ export default function HomePageContent() {
         >
           <div className="absolute inset-0 z-0">
             <div className="absolute inset-0 z-10 bg-gradient-to-r from-[#23200f] via-[#23200f]/90 to-[#23200f]/40" />
-            <img
+            <Image
               alt="Cinematic production background"
               className="h-full w-full object-cover opacity-40"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAT6pBuddnd545-atYzSN21VvjgBZgxsGsgk0fWE3QglW_UUKWm2oiSYWzG0udb5p5wkf5syRX8upvrnKaYwVpDaFtrU8aS5ohSuV8_BM-olGEkgPJ2XEqcCukFE-Shj03NF8aBdlv6pTjFtLCA7p63jztiG6jL8zzcNy4UITyJX1TwOLuSgKtW4ndvKoi3O3jQGlifGEOZZXAr_3c-gB0Qflq5-e3ivD3MTH8qeuh9vNoOK3m45nB6LWOQ3BPckUdVJlVAHyHOmHo"
+              src="/images/hero-bg.webp"
+              fill
+              priority
+              sizes="100vw"
             />
           </div>
           <div className="relative z-20 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -57,26 +83,44 @@ export default function HomePageContent() {
                 </div>
               </div>
               <div className="w-full lg:w-[55%]">
-                <div className="group relative aspect-video overflow-hidden rounded-2xl border border-white/10 bg-slate-900 shadow-2xl">
-                  <video
-                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    preload="metadata"
-                    poster="/images/hero-video-poster.jpg"
-                  >
-                    <source
-                      src="/videos/hero.mp4"
-                      type="video/mp4"
-                      media="(min-width: 768px)"
-                    />
-                    <source
-                      src="/videos/hero-mobile.mp4"
-                      type="video/mp4"
-                    />
-                  </video>
+                <div
+                  ref={videoContainerRef}
+                  className="group relative aspect-video overflow-hidden rounded-2xl border border-white/10 bg-slate-900 shadow-2xl"
+                >
+                  {shouldLoadVideo ? (
+                    <video
+                      className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      muted
+                      loop
+                      playsInline
+                      controls
+                      preload="none"
+                      poster="/images/hero-video-poster.jpg"
+                    >
+                      <source
+                        src="/videos/hero.mp4"
+                        type="video/mp4"
+                        media="(min-width: 768px)"
+                      />
+                      <source src="/videos/hero-mobile.mp4" type="video/mp4" />
+                    </video>
+                  ) : (
+                    <button
+                      type="button"
+                      className="relative h-full w-full"
+                      onClick={() => setShouldLoadVideo(true)}
+                      aria-label="Load hero video"
+                    >
+                      <Image
+                        src="/images/hero-video-poster.jpg"
+                        alt="Hero video poster"
+                        fill
+                        className="object-cover transition-transform duration-700 group-hover:scale-105"
+                        sizes="(min-width: 1024px) 55vw, 100vw"
+                        loading="lazy"
+                      />
+                    </button>
+                  )}
                 </div>
               </div>
             </div>
