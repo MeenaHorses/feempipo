@@ -1,7 +1,7 @@
+import { youtubeRssFetchOptions as defaultFetchOptions } from "./youtubeCache";
+
 const FEEMPIPO_YDR_PLAYLIST_ID = "PL8TvvF5M4b8MgURrUL5RhTtXgIEMUqokq";
 const RSS_URL = `https://www.youtube.com/feeds/videos.xml?playlist_id=${FEEMPIPO_YDR_PLAYLIST_ID}`;
-
-const defaultFetchOptions = { next: { revalidate: 1800 } };
 
 /** Prefer i.ytimg.com — matches YouTube CDN; order: max → SD (16:9) → HQ. */
 function getYouTubePosterCandidates(videoId) {
