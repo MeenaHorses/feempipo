@@ -68,6 +68,25 @@ export const metadata = {
     index: true,
     follow: true,
   },
+  manifest: "/manifest.json",
+  appleWebApp: {
+    capable: true,
+    title: "Feempipo",
+    statusBarStyle: "black-translucent",
+  },
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "48x48", type: "image/x-icon" },
+      { url: "/favicon.png", type: "image/png", sizes: "128x128" },
+      { url: "/logo192.png", type: "image/png", sizes: "192x192" },
+      { url: "/logo512.png", type: "image/png", sizes: "512x512" },
+    ],
+    apple: [{ url: "/logo192.png", sizes: "192x192", type: "image/png" }],
+  },
+};
+
+export const viewport = {
+  themeColor: "#23200f",
 };
 
 export default function RootLayout({ children }) {
