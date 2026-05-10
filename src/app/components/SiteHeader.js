@@ -51,9 +51,13 @@ export default function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-[#f5cd05]/20 bg-[#23200f]">
-      <div className="mx-auto flex h-20 max-w-[1500px] items-center justify-between gap-4 px-2 sm:px-4 lg:px-6">
-        <Link href="/" className="flex items-center" aria-label="Feempipo home">
-          <div className="w-44 sm:w-52">
+      <div className="mx-auto flex h-16 max-w-[1500px] items-center justify-between gap-1.5 px-2 sm:gap-2 sm:px-3 md:h-20 md:gap-3 md:px-4 lg:gap-4 lg:px-6">
+        <Link
+          href="/"
+          className="flex min-w-0 flex-1 items-center pr-1 sm:pr-2"
+          aria-label="Feempipo home"
+        >
+          <div className="w-[6.5rem] shrink-0 sm:w-32 md:w-40 lg:w-52">
             <Image
               src={feemPipoLogo}
               alt="feem pipo"
@@ -68,7 +72,7 @@ export default function SiteHeader() {
           </div>
         </Link>
 
-        <nav className="hidden items-center gap-5 md:flex" aria-label="Main">
+        <nav className="hidden items-center gap-5 lg:flex" aria-label="Main">
           {links.map((link) => {
             const active = pathname === link.href;
             return (
@@ -85,31 +89,31 @@ export default function SiteHeader() {
           })}
         </nav>
 
-        <div className="flex items-center gap-2 sm:gap-4">
+        <div className="flex shrink-0 items-center gap-1 sm:gap-2 md:gap-3 lg:gap-4">
           <Link
             href="/contact-us"
-            className="inline-flex items-center justify-center rounded-lg bg-[#f5cd05] px-6 py-3 text-sm font-bold text-[#23200f] transition-all hover:bg-[#f5cd05]/90"
+            className="inline-flex items-center justify-center whitespace-nowrap rounded-lg bg-[#f5cd05] px-2.5 py-1.5 text-[11px] font-bold leading-tight text-[#23200f] transition-all hover:bg-[#f5cd05]/90 sm:px-3.5 sm:py-2 sm:text-xs md:px-5 md:py-2.5 md:text-sm lg:px-6 lg:py-3"
           >
             Contact Us
           </Link>
           <button
             type="button"
-            className="inline-flex size-11 shrink-0 items-center justify-center rounded-lg border border-[#f5cd05]/30 bg-[#f5cd05]/5 text-[#f5cd05] transition-all hover:border-[#f5cd05]/50 hover:bg-[#f5cd05]/15 hover:shadow-[0_0_20px_rgba(245,205,5,0.12)] md:hidden"
+            className="inline-flex size-9 shrink-0 items-center justify-center rounded-lg border border-[#f5cd05]/30 bg-[#f5cd05]/5 text-[#f5cd05] transition-all hover:border-[#f5cd05]/50 hover:bg-[#f5cd05]/15 hover:shadow-[0_0_20px_rgba(245,205,5,0.12)] sm:size-10 lg:hidden"
             aria-expanded={menuOpen}
             aria-controls="mobile-nav-drawer"
             aria-label={menuOpen ? "Close menu" : "Open menu"}
             onClick={() => setMenuOpen((o) => !o)}
           >
-            <span className="material-symbols-outlined text-[26px] leading-none">
+            <span className="material-symbols-outlined text-[22px] leading-none sm:text-2xl">
               {menuOpen ? "close" : "menu"}
             </span>
           </button>
         </div>
       </div>
 
-      {/* Mobile drawer — md+ uses unchanged desktop nav above */}
+      {/* Drawer below lg — inline nav only from lg (1024px) and up */}
       <div
-        className={`fixed inset-0 z-[60] md:hidden ${menuOpen ? "pointer-events-auto" : "pointer-events-none"}`}
+        className={`fixed inset-0 z-[60] lg:hidden ${menuOpen ? "pointer-events-auto" : "pointer-events-none"}`}
         aria-hidden={!menuOpen}
         inert={!menuOpen ? true : undefined}
       >

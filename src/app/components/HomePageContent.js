@@ -85,7 +85,7 @@ export default function HomePageContent() {
               <div className="w-full lg:w-[55%]">
                 <div
                   ref={videoContainerRef}
-                  className="group relative aspect-video overflow-hidden rounded-2xl border border-white/10 bg-slate-900 shadow-2xl"
+                  className="group relative aspect-video overflow-hidden rounded-2xl border border-white/10 bg-[url('/images/hero-video-poster.jpg')] bg-cover bg-center bg-no-repeat shadow-2xl"
                 >
                   {shouldLoadVideo ? (
                     <video
