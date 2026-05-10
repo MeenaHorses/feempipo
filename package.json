@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
+    "@netlify/plugin-nextjs": "^5.15.11",
     "next": "^16.0.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
