@@ -1,14 +1,16 @@
+import { buildPageMetadata } from "../../lib/seo";
 import SiteHeader from "../components/SiteHeader";
 import SiteFooter from "../components/SiteFooter";
+import RevealOnScroll from "../components/RevealOnScroll";
 import { getYouTubeThumb, series, toYouTubeWatchUrl } from "../../data/media";
 import { getPlaylistsByIds, getYawaSeriesPlaylists } from "../../lib/youtube";
 
-export const metadata = {
+export const metadata = buildPageMetadata({
   title: "Series",
   description:
     "Binge quality Feempipo series with compelling storylines, strong characters, and cinematic African production.",
-  alternates: { canonical: "/series" },
-};
+  pathname: "/series",
+});
 
 export const dynamic = "force-dynamic";
 
@@ -97,6 +99,7 @@ export default async function SeriesPage() {
     <div className="min-h-screen font-display text-slate-100">
       <SiteHeader />
       <main className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+        <RevealOnScroll>
         <h1 className="text-4xl font-black tracking-tight text-white md:text-5xl">
           Series
         </h1>
@@ -109,6 +112,8 @@ export default async function SeriesPage() {
           storylines, strong character development, and cinematic production to
           deliver unforgettable viewing experiences.
         </p>
+        </RevealOnScroll>
+        <RevealOnScroll>
         <section className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {playlists.map((playlist) => (
             <article key={playlist.id || playlist.title} className="group cursor-pointer">
@@ -145,6 +150,7 @@ export default async function SeriesPage() {
             </article>
           ))}
         </section>
+        </RevealOnScroll>
       </main>
       <SiteFooter />
     </div>

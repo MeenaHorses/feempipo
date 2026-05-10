@@ -1,5 +1,7 @@
+import { buildPageMetadata } from "../../lib/seo";
 import SiteHeader from "../components/SiteHeader";
 import SiteFooter from "../components/SiteFooter";
+import RevealOnScroll from "../components/RevealOnScroll";
 import {
   extractYouTubeVideoId,
   getYouTubeThumb,
@@ -8,12 +10,12 @@ import {
 } from "../../data/media";
 import { FEEMPIPO_CHANNEL_URL, getPlaylistVideosPage } from "../../lib/youtube";
 
-export const metadata = {
+export const metadata = buildPageMetadata({
   title: "Movies",
   description:
     "Watch premium Nigerian and African movies from Feempipo with powerful storytelling and top production quality.",
-  alternates: { canonical: "/movies" },
-};
+  pathname: "/movies",
+});
 
 export const dynamic = "force-dynamic";
 const FEEMPIPO_MOVIES_PLAYLIST_ID = "PL8TvvF5M4b8NvDATYmZSuHpGlxGOjKGZO";
@@ -59,6 +61,7 @@ export default async function MoviesPage() {
     <div className="min-h-screen font-display text-slate-100">
       <SiteHeader />
       <main className="mx-auto w-full max-w-[1200px] flex-1 px-4 py-8 md:px-10">
+        <RevealOnScroll>
         <section className="mb-12 flex flex-col gap-8 md:flex-row">
           <div className="flex-1 space-y-6">
             <div className="flex items-center gap-4">
@@ -119,7 +122,9 @@ export default async function MoviesPage() {
             </div>
           </div>
         </section>
+        </RevealOnScroll>
 
+        <RevealOnScroll>
         <section id="recent-movies" className="space-y-6">
           <div className="border-b border-[#f5cd05]/10 pb-4">
             <h2 className="text-2xl font-bold text-white">Feature Films</h2>
@@ -173,7 +178,9 @@ export default async function MoviesPage() {
             </a>
           </div>
         </section>
+        </RevealOnScroll>
 
+        <RevealOnScroll>
         <section className="mt-16 flex flex-col items-center justify-between gap-8 rounded-2xl bg-[#f5cd05] p-8 md:flex-row md:p-12">
           <div className="text-center md:text-left">
             <h2 className="mb-2 text-3xl font-black text-[#23200f]">
@@ -195,6 +202,7 @@ export default async function MoviesPage() {
             </a>
           </div>
         </section>
+        </RevealOnScroll>
       </main>
       <SiteFooter />
     </div>

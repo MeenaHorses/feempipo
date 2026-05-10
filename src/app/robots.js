@@ -1,9 +1,12 @@
+import { SITE_URL } from "../lib/seo";
+
 export default function robots() {
   return {
     rules: {
       userAgent: "*",
-      allow: "/"
+      allow: "/",
     },
-    sitemap: "https://feempipo.com/sitemap.xml"
+    sitemap: `${SITE_URL}/sitemap.xml`,
+    host: SITE_URL,
   };
 }

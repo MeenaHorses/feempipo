@@ -1,19 +1,22 @@
 import Link from "next/link";
+import { buildPageMetadata } from "../../lib/seo";
 import SiteHeader from "../components/SiteHeader";
 import SiteFooter from "../components/SiteFooter";
+import RevealOnScroll from "../components/RevealOnScroll";
 
-export const metadata = {
+export const metadata = buildPageMetadata({
   title: "Privacy Policy",
   description:
     "Feempipo Privacy Policy — how we collect, use, and protect your information on our website and channels.",
-  alternates: { canonical: "/privacy-policy" },
-};
+  pathname: "/privacy-policy",
+});
 
 export default function PrivacyPolicyPage() {
   return (
     <div className="min-h-screen font-display text-[#eae2d0]">
       <SiteHeader />
       <main className="mx-auto max-w-5xl px-6 pb-24 pt-24 md:px-12">
+        <RevealOnScroll>
         <header className="mb-16">
           <div className="mb-4 flex flex-wrap items-center gap-3">
             <span className="rounded-full bg-[#f5cd05]/20 px-3 py-1 text-[0.875rem] font-bold tracking-wide text-[#f5cd05] uppercase">
@@ -30,7 +33,9 @@ export default function PrivacyPolicyPage() {
             when you visit our website or interact with our content on YouTube and other platforms.
           </p>
         </header>
+        </RevealOnScroll>
 
+        <RevealOnScroll>
         <div className="mb-20 grid grid-cols-1 gap-6 md:grid-cols-3">
           <div className="flex flex-col justify-between rounded-xl bg-gradient-to-br from-[#2e2a1e] to-[#23200f] p-8 md:col-span-2">
             <div>
@@ -62,7 +67,9 @@ export default function PrivacyPolicyPage() {
             </div>
           </div>
         </div>
+        </RevealOnScroll>
 
+        <RevealOnScroll>
         <section className="space-y-12">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-12">
             <div className="md:col-span-4">
@@ -247,6 +254,7 @@ export default function PrivacyPolicyPage() {
             </Link>
           </div>
         </section>
+        </RevealOnScroll>
       </main>
       <SiteFooter />
     </div>

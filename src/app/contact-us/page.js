@@ -1,13 +1,15 @@
+import { buildPageMetadata } from "../../lib/seo";
 import SiteHeader from "../components/SiteHeader";
 import SiteFooter from "../components/SiteFooter";
+import RevealOnScroll from "../components/RevealOnScroll";
 import ContactForm from "./ContactForm";
 
-export const metadata = {
+export const metadata = buildPageMetadata({
   title: "Contact Us",
   description:
     "Contact Feempipo for partnerships, collaborations, and production inquiries via phone, email, or contact form.",
-  alternates: { canonical: "/contact-us" },
-};
+  pathname: "/contact-us",
+});
 
 export default function ContactUsPage() {
   return (
@@ -15,6 +17,7 @@ export default function ContactUsPage() {
       <SiteHeader />
       <main className="flex flex-1 flex-col items-center">
         <div className="w-full max-w-[1200px] px-6 py-12 md:px-20 md:py-20">
+          <RevealOnScroll>
           <div className="mb-16">
             <h1 className="mb-6 text-4xl font-black leading-tight tracking-tight md:text-6xl">
               Contact Us
@@ -25,7 +28,9 @@ export default function ContactUsPage() {
               would love to hear from you.
             </p>
           </div>
+          </RevealOnScroll>
 
+          <RevealOnScroll>
           <div className="grid grid-cols-1 gap-16 lg:grid-cols-2 lg:gap-24">
             <div className="flex flex-col gap-8">
               <div>
@@ -67,6 +72,7 @@ export default function ContactUsPage() {
               <ContactForm />
             </section>
           </div>
+          </RevealOnScroll>
         </div>
       </main>
       <SiteFooter />

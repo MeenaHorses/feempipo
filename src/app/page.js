@@ -1,4 +1,6 @@
-import HomePageContent from "./components/HomePageContent";
+import HomePageLayout from "./components/HomePageLayout";
+import HomeHeroSections from "./components/HomeHeroSections";
+import HomeTrendingSeries from "./components/HomeTrendingSeries";
 
 const SITE = "https://feempipo.com";
 
@@ -39,6 +41,14 @@ export const metadata = {
       "Premium African movies, series, documentaries, and comedy from Feempipo.",
     images: ["/og-image.jpg"],
   },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
 };
 
 const homeJsonLd = {
@@ -77,7 +87,10 @@ export default function HomePage() {
           __html: JSON.stringify(homeJsonLd),
         }}
       />
-      <HomePageContent />
+      <HomePageLayout>
+        <HomeHeroSections />
+        <HomeTrendingSeries />
+      </HomePageLayout>
     </>
   );
 }

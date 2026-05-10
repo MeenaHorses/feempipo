@@ -25,15 +25,21 @@ function fieldErrors(data) {
 
   return {
     fullName: !name ? "Please enter your name." : "",
-    email: !email ? "Please enter your email." : !emailOk(email) ? "Use a valid email address." : "",
-    phone: !phoneOk(phone) ? "That doesn't look like a valid phone number." : "",
+    email: !email
+      ? "Please enter your email."
+      : !emailOk(email)
+        ? "Use a valid email address."
+        : "",
+    phone: !phoneOk(phone)
+      ? "That doesn't look like a valid phone number."
+      : "",
     message: !msg
       ? "Please enter a message."
       : msg.length < MESSAGE_MIN
         ? `Message needs at least ${MESSAGE_MIN} characters.`
         : msg.length > MESSAGE_MAX
           ? `Message can't exceed ${MESSAGE_MAX} characters.`
-          : ""
+          : "",
   };
 }
 
@@ -76,7 +82,7 @@ export default function ContactForm() {
         fullName: true,
         email: true,
         phone: true,
-        message: true
+        message: true,
       });
       return;
     }
@@ -88,9 +94,14 @@ export default function ContactForm() {
         lastName: "",
         email: formData.email.trim(),
         phone: formData.phone.trim(),
-        message: formData.message.trim()
+        message: formData.message.trim(),
       };
-      await emailjs.send("service_n6edujk", "template_cdvll1k", payload, "c4MSVbZuBc6653KeV");
+      await emailjs.send(
+        "service_n6edujk",
+        "template_cdvll1k",
+        payload,
+        "c4MSVbZuBc6653KeV",
+      );
       setFormData(initial);
       setTouched({});
       setSuccess(true);
@@ -106,7 +117,10 @@ export default function ContactForm() {
     <form onSubmit={handleSubmit} className="space-y-6" noValidate>
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
         <div className="flex flex-col gap-2">
-          <label htmlFor="contact-full-name" className="text-sm font-medium text-slate-100">
+          <label
+            htmlFor="contact-full-name"
+            className="text-sm font-medium text-slate-100"
+          >
             Full Name
           </label>
           <input
@@ -128,7 +142,10 @@ export default function ContactForm() {
           ) : null}
         </div>
         <div className="flex flex-col gap-2">
-          <label htmlFor="contact-email" className="text-sm font-medium text-slate-100">
+          <label
+            htmlFor="contact-email"
+            className="text-sm font-medium text-slate-100"
+          >
             Email Address
           </label>
           <input
@@ -138,7 +155,7 @@ export default function ContactForm() {
             value={formData.email}
             onChange={handleChange}
             onBlur={handleBlur}
-            placeholder="Enter your email address"
+            placeholder="Enter your email"
             autoComplete="email"
             aria-invalid={Boolean(showErr("email"))}
             aria-describedby={showErr("email") ? "err-email" : undefined}
@@ -152,8 +169,12 @@ export default function ContactForm() {
         </div>
       </div>
       <div className="flex flex-col gap-2">
-        <label htmlFor="contact-phone" className="text-sm font-medium text-slate-100">
-          Phone Number <span className="font-normal text-slate-500">(optional)</span>
+        <label
+          htmlFor="contact-phone"
+          className="text-sm font-medium text-slate-100"
+        >
+          Phone Number{" "}
+          <span className="font-normal text-slate-500">(optional)</span>
         </label>
         <input
           id="contact-phone"
@@ -175,7 +196,10 @@ export default function ContactForm() {
         ) : null}
       </div>
       <div className="flex flex-col gap-2">
-        <label htmlFor="contact-message" className="text-sm font-medium text-slate-100">
+        <label
+          htmlFor="contact-message"
+          className="text-sm font-medium text-slate-100"
+        >
           Message
         </label>
         <textarea
@@ -192,7 +216,8 @@ export default function ContactForm() {
           className="contact-field w-full resize-none rounded-lg border border-slate-700 bg-[#27271f] p-4 text-slate-100 placeholder:text-slate-400 focus:border-[#f5cd05] focus:outline-none focus:ring-1 focus:ring-[#f5cd05]"
         />
         <p className="text-xs text-slate-500">
-          {formData.message.trim().length}/{MESSAGE_MAX} · min {MESSAGE_MIN} characters
+          {formData.message.trim().length}/{MESSAGE_MAX} · min {MESSAGE_MIN}{" "}
+          characters
         </p>
         {showErr("message") ? (
           <p id="err-message" className="text-sm text-red-400">
@@ -219,7 +244,10 @@ export default function ContactForm() {
       >
         <span>{sending ? "Sending…" : "Send Message"}</span>
         {!sending ? (
-          <span className="material-symbols-outlined text-[#23200f]" aria-hidden>
+          <span
+            className="material-symbols-outlined text-[#23200f]"
+            aria-hidden
+          >
             send
           </span>
         ) : null}

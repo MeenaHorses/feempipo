@@ -1,13 +1,15 @@
 import Link from "next/link";
+import { buildPageMetadata } from "../../lib/seo";
 import SiteHeader from "../components/SiteHeader";
 import SiteFooter from "../components/SiteFooter";
+import RevealOnScroll from "../components/RevealOnScroll";
 
-export const metadata = {
+export const metadata = buildPageMetadata({
   title: "Terms of Service",
   description:
     "Feempipo Terms of Service — rules for using our website, YouTube channels, and content.",
-  alternates: { canonical: "/terms-of-service" },
-};
+  pathname: "/terms-of-service",
+});
 
 const navItems = [
   { href: "#use-of-content", label: "Use of Content" },
@@ -32,7 +34,7 @@ export default function TermsOfServicePage() {
                 "radial-gradient(ellipse at 30% 20%, rgba(245,205,5,0.12) 0%, transparent 50%)",
             }}
           />
-          <div className="relative z-10 mx-auto w-full max-w-[1200px] px-6 py-16 md:px-12">
+          <RevealOnScroll className="relative z-10 mx-auto w-full max-w-[1200px] px-6 py-16 md:px-12">
             <span className="mb-4 block text-sm font-bold tracking-[0.2em] text-[#f5cd05] uppercase">
               Legal
             </span>
@@ -43,10 +45,11 @@ export default function TermsOfServicePage() {
               Feempipo Terms of Service — guidelines for using our website, YouTube channels, and
               related services.
             </p>
-          </div>
+          </RevealOnScroll>
         </section>
 
         <section className="mx-auto max-w-[1200px] px-6 py-16 md:px-12 md:py-24">
+          <RevealOnScroll>
           <div className="grid grid-cols-1 gap-16 lg:grid-cols-12 lg:gap-16">
             <aside className="hidden lg:col-span-3 lg:block">
               <div className="sticky top-28 space-y-6">
@@ -195,6 +198,7 @@ export default function TermsOfServicePage() {
               </article>
             </div>
           </div>
+          </RevealOnScroll>
         </section>
       </main>
       <SiteFooter />

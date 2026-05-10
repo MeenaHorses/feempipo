@@ -1,15 +1,17 @@
+import { buildPageMetadata } from "../../lib/seo";
 import SiteHeader from "../components/SiteHeader";
 import SiteFooter from "../components/SiteFooter";
+import RevealOnScroll from "../components/RevealOnScroll";
 import { extractYouTubeVideoId, getYouTubeThumb, yawaSkits } from "../../data/media";
 import { getYawaEpisodesPage, YAWA_CHANNEL_URL } from "../../lib/youtube";
 import YawaSkitsEpisodesSection from "./YawaSkitsEpisodesSection";
 
-export const metadata = {
+export const metadata = buildPageMetadata({
   title: "YawaSkits",
   description:
     "Watch YawaSkits by Feempipo - relatable and entertaining African comedy episodes with millions of fans.",
-  alternates: { canonical: "/yawaskits" },
-};
+  pathname: "/yawaskits",
+});
 
 /** Read YOUTUBE_API_KEY at request time (not only at build) so production env works. */
 export const dynamic = "force-dynamic";
@@ -54,6 +56,7 @@ export default async function YawaSkitsPage() {
       <SiteHeader />
 
       <main className="mx-auto w-full max-w-[1200px] flex-1 px-4 py-8 md:px-10">
+        <RevealOnScroll>
         <section className="mb-12 flex flex-col gap-8 md:flex-row">
           <div className="flex-1 space-y-6">
             <div className="flex items-center gap-4">
@@ -126,14 +129,18 @@ export default async function YawaSkitsPage() {
             </div>
           </div> */}
         </section>
+        </RevealOnScroll>
 
+        <RevealOnScroll>
         <YawaSkitsEpisodesSection
           initialEpisodes={episodes}
           initialNextPageToken={initialNextPageToken}
           loadMoreEnabled={loadMoreEnabled}
           usedFallback={usedFallback}
         />
+        </RevealOnScroll>
 
+        <RevealOnScroll>
         <section className="mt-16 flex flex-col items-center justify-between gap-8 rounded-2xl bg-[#f5cd05] p-8 md:flex-row md:p-12">
           <div className="text-center md:text-left">
             <h2 className="mb-2 text-3xl font-black text-[#23200f]">
@@ -160,6 +167,7 @@ export default async function YawaSkitsPage() {
             </a>
           </div>
         </section>
+        </RevealOnScroll>
       </main>
 
       <SiteFooter />

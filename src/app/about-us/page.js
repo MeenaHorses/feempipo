@@ -1,12 +1,14 @@
+import { buildPageMetadata } from "../../lib/seo";
 import SiteHeader from "../components/SiteHeader";
 import SiteFooter from "../components/SiteFooter";
+import RevealOnScroll from "../components/RevealOnScroll";
 
-export const metadata = {
+export const metadata = buildPageMetadata({
   title: "About Us",
   description:
     "Learn about Feempipo LTD, a leading media production company in Abuja focused on films, series, documentaries, and digital media.",
-  alternates: { canonical: "/about-us" },
-};
+  pathname: "/about-us",
+});
 
 export default function AboutUsPage() {
   return (
@@ -14,22 +16,25 @@ export default function AboutUsPage() {
       <SiteHeader />
       <main className="flex flex-1 flex-col items-center">
         <div className="w-full max-w-[1200px] px-6 py-8 md:px-10">
-          <div
-            className="relative flex h-80 w-full flex-col justify-end overflow-hidden rounded-xl bg-slate-800 md:h-[450px]"
-            style={{
-              backgroundImage:
-                "linear-gradient(180deg, rgba(35,32,15,0) 0%, rgba(35,32,15,0.8) 100%), url('https://lh3.googleusercontent.com/aida-public/AB6AXuDqlELExLsTqwSbJfzt5IZ8Y25htx90eC2LT6qLCsxkGkt5BTXe0xIvP5nKt5rkMGbAk0-b22BtEAfgy3wH5fjecKtdqWz0Xr2_WjL2Q1cWLc6t5LrYg9YQ5qMmDtyrkZ3cw0vKPMFeXCyXnJyS2MPYIb7Jgc64BA0W8U-phil8RsLpMDwLlfCA1PnT0e29nblHVgYA16IZOKfB1g_SmypbBjK7g9wFNkFXZmchOCFjQExYP04pc6djNmXz2J5Fg-H-hSILRiJgK78')",
-            }}
-          >
-            <div className="p-8">
-              <h1 className="text-4xl font-black leading-tight tracking-tight text-slate-100 md:text-6xl">
-                About Us
-              </h1>
-              <div className="mt-4 h-1 w-24 bg-[#f5cd05]" />
+          <RevealOnScroll>
+            <div
+              className="relative flex h-80 w-full flex-col justify-end overflow-hidden rounded-xl bg-slate-800 md:h-[450px]"
+              style={{
+                backgroundImage:
+                  "linear-gradient(180deg, rgba(35,32,15,0) 0%, rgba(35,32,15,0.8) 100%), url('https://lh3.googleusercontent.com/aida-public/AB6AXuDqlELExLsTqwSbJfzt5IZ8Y25htx90eC2LT6qLCsxkGkt5BTXe0xIvP5nKt5rkMGbAk0-b22BtEAfgy3wH5fjecKtdqWz0Xr2_WjL2Q1cWLc6t5LrYg9YQ5qMmDtyrkZ3cw0vKPMFeXCyXnJyS2MPYIb7Jgc64BA0W8U-phil8RsLpMDwLlfCA1PnT0e29nblHVgYA16IZOKfB1g_SmypbBjK7g9wFNkFXZmchOCFjQExYP04pc6djNmXz2J5Fg-H-hSILRiJgK78')",
+              }}
+            >
+              <div className="p-8">
+                <h1 className="text-4xl font-black leading-tight tracking-tight text-slate-100 md:text-6xl">
+                  About Us
+                </h1>
+                <div className="mt-4 h-1 w-24 bg-[#f5cd05]" />
+              </div>
             </div>
-          </div>
+          </RevealOnScroll>
         </div>
 
+        <RevealOnScroll>
         <div className="flex w-full max-w-[1200px] flex-col gap-12 px-6 py-12 md:flex-row md:px-10">
           <div className="flex-1">
             <h2 className="mb-4 text-sm font-bold tracking-widest text-[#f5cd05] uppercase">
@@ -79,8 +84,10 @@ export default function AboutUsPage() {
             />
           </div>
         </div>
+        </RevealOnScroll>
 
         <div className="w-full bg-[#f5cd05]/5 py-20 px-6 md:px-10">
+          <RevealOnScroll>
           <div className="mx-auto grid max-w-[1200px] grid-cols-1 gap-12 md:grid-cols-3">
             <div className="flex flex-col items-center text-center">
               <span className="material-symbols-outlined mb-4 text-5xl text-[#f5cd05]">
@@ -110,9 +117,11 @@ export default function AboutUsPage() {
               </p>
             </div>
           </div>
+          </RevealOnScroll>
         </div>
 
         <div className="w-full max-w-[1200px] px-6 py-24 md:px-10">
+          <RevealOnScroll>
           <h2 className="mb-12 text-center text-3xl font-bold">
             Our Expertise
           </h2>
@@ -150,6 +159,7 @@ export default function AboutUsPage() {
               </p>
             </div>
           </div>
+          </RevealOnScroll>
         </div>
       </main>
       <SiteFooter />
