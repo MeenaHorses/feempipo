@@ -83,17 +83,17 @@ export default function HomeHeroSections() {
               </p>
               <div className="flex flex-col gap-4 sm:flex-row">
                 <Link
-                  href="/movies"
+                  href="/series"
                   className="group flex items-center justify-center gap-2 rounded-xl bg-[#f5cd05] px-7 py-3 text-base font-bold text-[#23200f] transition-all hover:scale-105"
                 >
                   <span className="material-symbols-outlined">play_circle</span>
-                  Watch Now
+                  Watch Featured Series
                 </Link>
                 <Link
-                  href="/documentaries"
+                  href="/movies"
                   className="flex items-center justify-center gap-2 rounded-xl border-2 border-white/20 px-7 py-3 text-base font-bold text-white transition-all hover:bg-white/10"
                 >
-                  Explore Catalog
+                  Explore Movies
                 </Link>
               </div>
             </div>
@@ -119,7 +119,10 @@ export default function HomeHeroSections() {
                           type="video/mp4"
                           media="(min-width: 768px)"
                         />
-                        <source src="/videos/hero-mobile.mp4" type="video/mp4" />
+                        <source
+                          src="/videos/hero-mobile.mp4"
+                          type="video/mp4"
+                        />
                       </video>
                     </div>
                   ) : (
@@ -158,8 +161,9 @@ export default function HomeHeroSections() {
                   Creatives in Motion
                 </h3>
                 <p className="max-w-xl text-lg text-slate-400">
-                  We bridge the gap between local narratives and global standards,
-                  delivering cinematic excellence through every frame.
+                  We bridge the gap between local narratives and global
+                  standards, delivering cinematic excellence through every
+                  frame.
                 </p>
               </div>
             </div>
@@ -177,7 +181,9 @@ export default function HomeHeroSections() {
                       {card.icon}
                     </span>
                   </div>
-                  <h4 className="mb-4 text-2xl font-bold text-white">{card.title}</h4>
+                  <h4 className="mb-4 text-2xl font-bold text-white">
+                    {card.title}
+                  </h4>
                   <p className="leading-relaxed text-slate-400">{card.body}</p>
                 </div>
               ))}
