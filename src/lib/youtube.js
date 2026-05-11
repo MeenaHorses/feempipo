@@ -1,3 +1,9 @@
+import {
+  youtubeApiMoviesFetchOptions,
+  youtubeApiSeriesFetchOptions,
+  youtubeApiYawaFetchOptions,
+} from "./youtubeCache";
+
 const YAWA_CHANNEL_ID = "UCakrXQVjsmclKHmnCIqlFMg";
 const YAWA_HANDLE = "@yawaskits";
 const FEEMPIPO_HANDLE = "@feempipo";
@@ -37,8 +43,6 @@ const isoDurationToClock = (isoDuration) => {
   }
   return `${m}:${String(s).padStart(2, "0")}`;
 };
-
-const defaultFetchOptions = { next: { revalidate: 1800 } };
 
 const getApiKey = () => process.env.YOUTUBE_API_KEY?.trim();
 const normalizeHandle = (handle) => (handle || "").replace(/^@/, "");
@@ -149,7 +153,7 @@ export async function getChannelRecentVideosPage({
   channelId = null,
   pageToken = null,
   limit = 8,
-  fetchOptions = defaultFetchOptions,
+  fetchOptions = youtubeApiYawaFetchOptions,
   titleFallback = "Video",
 }) {
   if (!getApiKey()) return null;
@@ -177,13 +181,13 @@ export async function getChannelRecentVideosPage({
  * Fetches a page of uploads from the YawaSkits channel. Uses YOUTUBE_API_KEY (server-only).
  * @param {string | null} pageToken - YouTube playlistItems nextPageToken, or null for first page
  * @param {number} limit - maxResults per page (max 50 per YouTube API)
- * @param {RequestInit} fetchOptions - e.g. { cache: 'no-store' } for API routes
+ * @param {RequestInit} fetchOptions - defaults to ISR cache via {@link ./youtubeCache.js}
  * @returns {Promise<{ episodes: object[], nextPageToken: string | null } | null>}
  */
 export async function getYawaEpisodesPage(
   pageToken = null,
   limit = 8,
-  fetchOptions = defaultFetchOptions,
+  fetchOptions = youtubeApiYawaFetchOptions,
 ) {
   return getChannelRecentVideosPage({
     handle: YAWA_HANDLE,
@@ -197,7 +201,7 @@ export async function getYawaEpisodesPage(
 
 export async function getFeempipoMoviesPage(
   limit = 12,
-  fetchOptions = defaultFetchOptions,
+  fetchOptions = youtubeApiMoviesFetchOptions,
 ) {
   return getChannelRecentVideosPage({
     handle: FEEMPIPO_HANDLE,
@@ -212,7 +216,7 @@ export async function getPlaylistVideosPage(
   playlistId,
   pageToken = null,
   limit = 12,
-  fetchOptions = defaultFetchOptions,
+  fetchOptions = youtubeApiMoviesFetchOptions,
   titleFallback = "Video",
 ) {
   return fetchRecentVideosPageByUploadsPlaylist(
@@ -228,7 +232,7 @@ export async function getChannelPlaylists({
   handle,
   channelId = null,
   limit = 25,
-  fetchOptions = defaultFetchOptions,
+  fetchOptions = youtubeApiSeriesFetchOptions,
 }) {
   const apiKey = getApiKey();
   if (!apiKey) return null;
@@ -259,7 +263,7 @@ export async function getChannelPlaylists({
 
 export async function getPlaylistsByIds(
   ids = [],
-  fetchOptions = defaultFetchOptions,
+  fetchOptions = youtubeApiSeriesFetchOptions,
 ) {
   const apiKey = getApiKey();
   if (!apiKey || !ids.length) return null;
@@ -307,7 +311,7 @@ const scoreSeriesPlaylist = (title) => {
 
 export async function getYawaSeriesPlaylists(
   limit = 30,
-  fetchOptions = defaultFetchOptions,
+  fetchOptions = youtubeApiSeriesFetchOptions,
 ) {
   const playlists = await getChannelPlaylists({
     handle: YAWA_HANDLE,

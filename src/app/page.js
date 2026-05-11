@@ -4,6 +4,9 @@ import HomeTrendingSeries from "./components/HomeTrendingSeries";
 
 const SITE = "https://feempipo.com";
 
+/** Matches `HOME_PAGE_REVALIDATE_SECONDS` / RSS in `src/lib/youtubeCache.js`. */
+export const revalidate = 172800;
+
 export const metadata = {
   title: "Premium African Movies, Series & Comedy",
   description:
