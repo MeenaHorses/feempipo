@@ -1,6 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
+    /** Allow `quality={88}` on `next/image` (e.g. YouTube thumbnails in Trending). */
+    qualities: [70, 75, 88],
     remotePatterns: [
       {
         protocol: "https",
