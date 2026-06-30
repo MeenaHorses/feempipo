@@ -22,26 +22,26 @@ const navItems = [
 
 export default function TermsOfServicePage() {
   return (
-    <div className="min-h-screen font-display text-[#eae2d0]">
+    <div className="min-h-screen cinematic-page font-display text-brand-text">
       <SiteHeader />
       <main>
         <section className="relative flex min-h-[280px] items-center overflow-hidden md:min-h-[360px]">
-          <div className="absolute inset-0 z-0 bg-gradient-to-r from-[#23200f] via-[#23200f]/95 to-[#23200f]" />
+          <div className="absolute inset-0 z-0 bg-gradient-to-r from-[#2a2a2a] via-[#2a2a2a]/95 to-[#2a2a2a]" />
           <div
             className="absolute inset-0 z-0 opacity-30"
             style={{
               backgroundImage:
-                "radial-gradient(ellipse at 30% 20%, rgba(245,205,5,0.12) 0%, transparent 50%)",
+                "radial-gradient(ellipse at 30% 20%, rgba(246, 166, 11,0.12) 0%, transparent 50%)",
             }}
           />
           <RevealOnScroll className="relative z-10 mx-auto w-full max-w-[1200px] px-6 py-16 md:px-12">
-            <span className="mb-4 block text-sm font-bold tracking-[0.2em] text-[#f5cd05] uppercase">
+            <span className="mb-4 block text-sm font-bold tracking-[0.2em] text-brand-gold uppercase">
               Legal
             </span>
             <h1 className="mb-6 text-4xl font-black tracking-tight text-white md:text-6xl">
               Terms of Service
             </h1>
-            <p className="max-w-xl text-lg text-[#d0c6ab] md:text-xl">
+            <p className="max-w-xl text-lg text-brand-text md:text-xl">
               Feempipo Terms of Service — guidelines for using our website, YouTube channels, and
               related services.
             </p>
@@ -53,7 +53,7 @@ export default function TermsOfServicePage() {
           <div className="grid grid-cols-1 gap-16 lg:grid-cols-12 lg:gap-16">
             <aside className="hidden lg:col-span-3 lg:block">
               <div className="sticky top-28 space-y-6">
-                <h4 className="mb-8 text-xs font-bold tracking-widest text-[#f5cd05]/60 uppercase">
+                <h4 className="mb-8 text-xs font-bold tracking-widest text-brand-gold/60 uppercase">
                   On this page
                 </h4>
                 <nav className="flex flex-col space-y-4">
@@ -63,39 +63,39 @@ export default function TermsOfServicePage() {
                       href={item.href}
                       className={`border-l-2 pl-4 transition-colors ${
                         i === 0
-                          ? "border-[#f5cd05] font-bold text-[#f5cd05]"
-                          : "border-transparent text-[#d0c6ab] hover:border-[#f5cd05]/40 hover:text-[#f5cd05]"
+                          ? "border-brand-gold font-bold text-brand-gold"
+                          : "border-transparent text-brand-text hover:border-brand-gold/40 hover:text-brand-gold"
                       }`}
                     >
                       {item.label}
                     </Link>
                   ))}
                 </nav>
-                <div className="mt-12 rounded-xl border border-white/5 bg-[#2e2a1e] p-6">
-                  <p className="text-xs leading-relaxed text-[#d0c6ab]">
-                    Last updated: <span className="text-[#eae2d0]">March 30, 2026</span>
+                <div className="mt-12 rounded-xl border border-brand-border brand-card p-6">
+                  <p className="text-xs leading-relaxed text-brand-text">
+                    Last updated: <span className="text-brand-text">March 30, 2026</span>
                   </p>
                 </div>
               </div>
             </aside>
 
             <div className="space-y-16 lg:col-span-9">
-              <p className="text-lg leading-relaxed text-[#d0c6ab]">
+              <p className="text-lg leading-relaxed text-brand-text">
                 Welcome to the Feempipo website and our YouTube channels. By accessing our content or
                 services, you agree to the following terms:
               </p>
 
               <article id="use-of-content" className="scroll-mt-28">
                 <div className="mb-6 flex items-center gap-4">
-                  <div className="flex size-12 items-center justify-center rounded-xl bg-[#f5cd05]/10 text-[#f5cd05]">
+                  <div className="flex size-12 items-center justify-center rounded-xl bg-brand-gold/10 text-brand-gold">
                     <span className="material-symbols-outlined">movie_filter</span>
                   </div>
                   <h2 className="text-3xl font-extrabold tracking-tight text-white">
                     1. Use of Content
                   </h2>
                 </div>
-                <div className="rounded-xl border-l-4 border-[#f5cd05] bg-[#2e2a1e] p-8">
-                  <ul className="list-inside list-disc space-y-3 text-lg leading-relaxed text-[#d0c6ab]">
+                <div className="rounded-xl border-l-4 border-brand-gold brand-card p-8">
+                  <ul className="list-inside list-disc space-y-3 text-lg leading-relaxed text-brand-text">
                     <li>
                       All content on Feempipo platforms, including videos, images, text, and
                       graphics, is owned by Feempipo or its licensors.
@@ -109,14 +109,14 @@ export default function TermsOfServicePage() {
 
               <article id="user-conduct" className="scroll-mt-28">
                 <div className="mb-6 flex items-center gap-4">
-                  <div className="flex size-12 items-center justify-center rounded-xl bg-[#f5cd05]/10 text-[#f5cd05]">
+                  <div className="flex size-12 items-center justify-center rounded-xl bg-brand-gold/10 text-brand-gold">
                     <span className="material-symbols-outlined">shield_person</span>
                   </div>
                   <h2 className="text-3xl font-extrabold tracking-tight text-white">
                     2. User Conduct
                   </h2>
                 </div>
-                <div className="space-y-4 leading-relaxed text-[#d0c6ab]">
+                <div className="space-y-4 leading-relaxed text-brand-text">
                   <p>
                     You agree not to misuse our website or channels, including posting harmful,
                     illegal, or infringing material.
@@ -130,14 +130,14 @@ export default function TermsOfServicePage() {
 
               <article id="submissions" className="scroll-mt-28">
                 <div className="mb-6 flex items-center gap-4">
-                  <div className="flex size-12 items-center justify-center rounded-xl bg-[#f5cd05]/10 text-[#f5cd05]">
+                  <div className="flex size-12 items-center justify-center rounded-xl bg-brand-gold/10 text-brand-gold">
                     <span className="material-symbols-outlined">upload_file</span>
                   </div>
                   <h2 className="text-3xl font-extrabold tracking-tight text-white">
                     3. Submissions &amp; Collaborations
                   </h2>
                 </div>
-                <div className="space-y-4 leading-relaxed text-[#d0c6ab]">
+                <div className="space-y-4 leading-relaxed text-brand-text">
                   <p>
                     Any content submitted to Feempipo (e.g., scripts, ideas, collaborations) may be
                     reviewed but will not automatically be used.
@@ -151,14 +151,14 @@ export default function TermsOfServicePage() {
 
               <article id="third-party-links" className="scroll-mt-28">
                 <div className="mb-6 flex items-center gap-4">
-                  <div className="flex size-12 items-center justify-center rounded-xl bg-[#f5cd05]/10 text-[#f5cd05]">
+                  <div className="flex size-12 items-center justify-center rounded-xl bg-brand-gold/10 text-brand-gold">
                     <span className="material-symbols-outlined">link</span>
                   </div>
                   <h2 className="text-3xl font-extrabold tracking-tight text-white">
                     4. Third-Party Links
                   </h2>
                 </div>
-                <p className="leading-relaxed text-[#d0c6ab]">
+                <p className="leading-relaxed text-brand-text">
                   Our website or YouTube channels may include links to third-party websites. Feempipo
                   is not responsible for the content or privacy practices of these external sites.
                 </p>
@@ -166,14 +166,14 @@ export default function TermsOfServicePage() {
 
               <article id="disclaimer" className="scroll-mt-28">
                 <div className="mb-6 flex items-center gap-4">
-                  <div className="flex size-12 items-center justify-center rounded-xl bg-[#f5cd05]/10 text-[#f5cd05]">
+                  <div className="flex size-12 items-center justify-center rounded-xl bg-brand-gold/10 text-brand-gold">
                     <span className="material-symbols-outlined">gavel</span>
                   </div>
                   <h2 className="text-3xl font-extrabold tracking-tight text-white">
                     5. Disclaimer
                   </h2>
                 </div>
-                <div className="space-y-4 leading-relaxed text-[#d0c6ab]">
+                <div className="space-y-4 leading-relaxed text-brand-text">
                   <p>Content is provided &quot;as is&quot; without warranties of any kind.</p>
                   <p>
                     Feempipo is not liable for any direct, indirect, or incidental damages arising
@@ -184,14 +184,14 @@ export default function TermsOfServicePage() {
 
               <article id="changes" className="scroll-mt-28">
                 <div className="mb-6 flex items-center gap-4">
-                  <div className="flex size-12 items-center justify-center rounded-xl bg-[#f5cd05]/10 text-[#f5cd05]">
+                  <div className="flex size-12 items-center justify-center rounded-xl bg-brand-gold/10 text-brand-gold">
                     <span className="material-symbols-outlined">update</span>
                   </div>
                   <h2 className="text-3xl font-extrabold tracking-tight text-white">
                     6. Changes to Terms
                   </h2>
                 </div>
-                <p className="leading-relaxed text-[#d0c6ab]">
+                <p className="leading-relaxed text-brand-text">
                   We may update these terms at any time. Continued use of our website or channels
                   constitutes acceptance of updated terms.
                 </p>

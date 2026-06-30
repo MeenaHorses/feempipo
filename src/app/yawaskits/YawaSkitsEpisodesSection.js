@@ -69,10 +69,10 @@ export default function YawaSkitsEpisodesSection({
 
   return (
     <section id="recent-episodes" className="space-y-6">
-      <div className="flex items-center justify-between border-b border-[#f5cd05]/10 pb-4">
+      <div className="flex items-center justify-between border-b border-brand-border pb-4">
         <h2 className="text-2xl font-bold text-white">Recent Episodes</h2>
         <a
-          className="flex items-center gap-1 text-sm font-bold text-[#f5cd05] hover:underline"
+          className="flex items-center gap-1 text-sm font-bold text-brand-gold hover:underline"
           href={YOUTUBE_VIDEOS_URL}
           target="_blank"
           rel="noreferrer"
@@ -95,8 +95,8 @@ export default function YawaSkitsEpisodesSection({
                   className="h-full w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 transition-opacity group-hover:opacity-100">
-                  <div className="flex size-14 translate-y-4 items-center justify-center rounded-full bg-[#f5cd05] transition-transform group-hover:translate-y-0">
-                    <span className="material-symbols-outlined text-3xl text-[#23200f]">
+                  <div className="flex size-14 translate-y-4 items-center justify-center rounded-full bg-brand-gold transition-transform group-hover:translate-y-0">
+                    <span className="material-symbols-outlined text-3xl text-charcoal-900">
                       play_arrow
                     </span>
                   </div>
@@ -105,10 +105,10 @@ export default function YawaSkitsEpisodesSection({
                   {video.duration || "10:00"}
                 </span>
               </div>
-              <h4 className="line-clamp-2 font-bold text-white transition-colors group-hover:text-[#f5cd05]">
+              <h4 className="line-clamp-2 font-bold text-white transition-colors group-hover:text-brand-gold">
                 {video.title}
               </h4>
-              <p className="mt-1 text-sm text-slate-400">
+              <p className="mt-1 text-sm text-brand-muted">
                 {video.meta || "1.0M views • recently"}
               </p>
             </a>
@@ -121,7 +121,7 @@ export default function YawaSkitsEpisodesSection({
             type="button"
             onClick={handleLoadMore}
             disabled={loading || hydrating || !nextPageToken}
-            className="rounded-full border border-[#f5cd05]/20 bg-[#f5cd05]/10 px-10 py-3 font-bold text-[#f5cd05] transition-all hover:bg-[#f5cd05] hover:text-[#23200f] disabled:cursor-not-allowed disabled:opacity-60"
+            className="rounded-full border border-brand-gold/20 bg-brand-gold/10 px-10 py-3 font-bold text-brand-gold transition-all hover:bg-brand-gold hover:text-charcoal-900 disabled:cursor-not-allowed disabled:opacity-60"
           >
             {hydrating || loading ? "Loading…" : "Load More Episodes"}
           </button>
@@ -130,7 +130,7 @@ export default function YawaSkitsEpisodesSection({
             href={YOUTUBE_VIDEOS_URL}
             target="_blank"
             rel="noreferrer"
-            className="rounded-full border border-[#f5cd05]/20 bg-[#f5cd05]/10 px-10 py-3 font-bold text-[#f5cd05] transition-all hover:bg-[#f5cd05] hover:text-[#23200f]"
+            className="rounded-full border border-brand-gold/20 bg-brand-gold/10 px-10 py-3 font-bold text-brand-gold transition-all hover:bg-brand-gold hover:text-charcoal-900"
           >
             More episodes on YouTube
           </a>

@@ -96,17 +96,17 @@ export default async function SeriesPage() {
   const playlists = dedupePlaylists([...prioritized, ...remaining]);
 
   return (
-    <div className="min-h-screen font-display text-slate-100">
+    <div className="min-h-screen cinematic-page font-display text-white">
       <SiteHeader />
       <main className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <RevealOnScroll>
         <h1 className="text-4xl font-black tracking-tight text-white md:text-5xl">
           Series
         </h1>
-        <h2 className="mt-4 max-w-5xl text-lg font-bold text-[#f5cd05]">
+        <h2 className="mt-4 max-w-5xl text-lg font-bold text-brand-gold">
           Compelling storytelling and cinematic productions.
         </h2>
-        <p className="mt-4 max-w-2xl text-lg leading-relaxed text-slate-300">
+        <p className="mt-4 max-w-2xl text-lg leading-relaxed text-brand-text">
           Feempipo produces engaging and high-quality series designed to keep
           audiences coming back for more. Our series combine compelling
           storylines, strong character development, and cinematic production to
@@ -123,27 +123,27 @@ export default async function SeriesPage() {
                 rel="noreferrer"
               >
                 <div className="relative mb-3 aspect-video">
-                  <div className="absolute inset-0 translate-x-2 translate-y-2 rounded-xl bg-white/5" />
-                  <div className="absolute inset-0 translate-x-1 translate-y-1 rounded-xl bg-white/10" />
-                  <div className="absolute inset-0 overflow-hidden rounded-xl border border-white/10">
+                  <div className="absolute inset-0 translate-x-2 translate-y-2 rounded-xl bg-gold-glow/50" />
+                  <div className="absolute inset-0 translate-x-1 translate-y-1 rounded-xl bg-gold-glow/30" />
+                  <div className="absolute inset-0 overflow-hidden rounded-xl border border-brand-border">
                   <img
                     src={playlist.thumbnail}
                     alt={`${playlist.title} series playlist thumbnail`}
                     className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 transition-opacity group-hover:opacity-100">
-                    <div className="flex size-14 items-center justify-center rounded-full bg-[#f5cd05]">
-                      <span className="material-symbols-outlined text-3xl text-[#23200f]">
+                    <div className="flex size-14 items-center justify-center rounded-full bg-brand-gold">
+                      <span className="material-symbols-outlined text-3xl text-charcoal-900">
                         play_arrow
                       </span>
                     </div>
                   </div>
                   </div>
                 </div>
-                <h2 className="line-clamp-2 font-bold text-slate-100 transition-colors group-hover:text-[#f5cd05]">
+                <h2 className="line-clamp-2 font-bold text-white transition-colors group-hover:text-brand-gold">
                   {playlist.title}
                 </h2>
-                <p className="mt-1 text-sm text-slate-400">
+                <p className="mt-1 text-sm text-brand-muted">
                   {playlist.itemCount > 0 ? `${playlist.itemCount} episodes` : "View full playlist"}
                 </p>
               </a>

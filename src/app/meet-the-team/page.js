@@ -76,20 +76,19 @@ function imageClass(member) {
 
 export default function MeetTheTeamPage() {
   return (
-    <div className="min-h-screen text-[#eae2d0]">
+    <div className="min-h-screen cinematic-page font-display text-white antialiased">
       <SiteHeader />
       <main className="mx-auto max-w-7xl px-4 pb-16 pt-10 sm:px-6 sm:pb-20 sm:pt-12">
-        {/* Hero — matches reference typography & grid */}
         <section className="mb-24">
           <div className="grid grid-cols-1 items-end gap-12 lg:grid-cols-12">
             <RevealOnScroll className="lg:col-span-8">
               <div>
-                <h1 className="mb-8 text-5xl font-black leading-[0.9] tracking-tighter text-[#f5cd05] uppercase sm:text-6xl md:text-7xl lg:text-8xl">
-                  THE CREATIVE <br />
-                  FORCE BEHIND <br />
-                  FEEMPIPO.
+                <h1 className="mb-8 text-5xl font-black leading-[0.95] tracking-tight text-brand-gold sm:text-6xl md:text-7xl lg:text-8xl">
+                  The Creative <br />
+                  Force Behind <br />
+                  Feempipo.
                 </h1>
-                <p className="max-w-2xl text-lg font-medium leading-relaxed text-[#d0c6ab] md:text-xl lg:text-2xl">
+                <p className="max-w-2xl font-sans text-lg font-normal leading-relaxed text-brand-muted md:text-xl lg:text-2xl">
                   At Feempipo, filmmaking is a collaborative art. From concept to
                   screen, our talented team combines creativity, technical
                   expertise, and passion for storytelling.
@@ -105,7 +104,7 @@ export default function MeetTheTeamPage() {
             {TEAM_MEMBERS.map((member, index) => (
               <div key={member.name} className={cardGridPlacement(index)}>
                 <div
-                  className={`group relative h-full overflow-hidden rounded-xl bg-[#2e2a1e] ${CARD_BOX}`}
+                  className={`group relative h-full overflow-hidden rounded-xl bg-charcoal-800 ${CARD_BOX}`}
                 >
                   <img
                     src={member.image}
@@ -113,17 +112,17 @@ export default function MeetTheTeamPage() {
                     className={imageClass(member)}
                   />
                   <div
-                    className="absolute inset-0 bg-gradient-to-t from-[#23200f] to-transparent opacity-90"
+                    className="absolute inset-0 bg-gradient-to-t from-charcoal-900 via-charcoal-900/70 to-transparent opacity-95"
                     aria-hidden
                   />
                   <div className="absolute bottom-0 left-0 w-full p-6 sm:p-8">
-                    <span className="mb-2 block text-xs font-bold tracking-widest text-[#f5cd05] uppercase">
+                    <span className="mb-2 block font-sans text-xs font-semibold tracking-wide text-brand-gold">
                       {member.role}
                     </span>
-                    <h3 className="mb-2 text-2xl font-black tracking-tighter text-white uppercase sm:text-3xl">
+                    <h3 className="mb-2 text-2xl font-bold tracking-tight text-white sm:text-3xl">
                       {member.name}
                     </h3>
-                    <p className="mb-4 text-pretty text-sm leading-relaxed text-[#d0c6ab] sm:text-[0.9375rem]">
+                    <p className="mb-4 text-pretty font-sans text-sm leading-relaxed text-brand-muted sm:text-[0.9375rem]">
                       {member.bio}
                     </p>
                     <div className="flex space-x-4">
@@ -131,7 +130,7 @@ export default function MeetTheTeamPage() {
                         href={member.instagram}
                         target="_blank"
                         rel="noreferrer"
-                        className="text-[#f5cd05] transition-transform hover:scale-110"
+                        className="text-brand-gold transition-transform hover:scale-110"
                         aria-label={`${member.name} Instagram`}
                       >
                         <svg viewBox="0 0 24 24" className="h-6 w-6 fill-current">
@@ -143,7 +142,7 @@ export default function MeetTheTeamPage() {
                           href={member.x}
                           target="_blank"
                           rel="noreferrer"
-                          className="text-[#f5cd05] transition-transform hover:scale-110"
+                          className="text-brand-gold transition-transform hover:scale-110"
                           aria-label={`${member.name} X`}
                         >
                           <svg viewBox="0 0 24 24" className="h-6 w-6 fill-current">
@@ -159,19 +158,18 @@ export default function MeetTheTeamPage() {
           </div>
         </RevealOnScroll>
 
-        {/* Join callout — surface-container-highest, primary CTA button */}
         <RevealOnScroll>
-          <section className="mt-32 flex flex-col items-center rounded-xl bg-[#f5cd05] p-10 text-center sm:p-12">
-            <h2 className="mb-4 text-3xl font-black tracking-tighter text-[#23200f] uppercase sm:text-4xl">
+          <section className="brand-cta-banner mt-32 flex flex-col items-center p-10 text-center sm:p-12">
+            <h2 className="mb-4 text-3xl font-black tracking-tight text-brand-bg sm:text-4xl">
               Be Part of the Story
             </h2>
-            <p className="mb-8 max-w-lg font-medium text-[#23200f]/80">
+            <p className="mb-8 max-w-lg font-sans font-normal text-brand-bg/80">
               We&apos;re always looking for visionary creators and technical
               wizards to join our growing studio.
             </p>
             <a
               href="mailto:Feempipo@gmail.com"
-              className="rounded-xl bg-[#23200f] px-8 py-4 font-black tracking-tighter text-[#f5cd05] uppercase transition-transform hover:scale-105 active:scale-95"
+              className="rounded-xl bg-brand-bg px-8 py-4 font-semibold tracking-tight text-brand-gold transition-transform hover:scale-105 active:scale-95"
             >
               Contact Us
             </a>

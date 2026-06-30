@@ -5,7 +5,7 @@ import SiteFooter from "./SiteFooter";
 
 export default function HomePageLayout({ children }) {
   return (
-    <div className="font-display text-slate-100 antialiased">
+    <div className="cinematic-page font-display text-white antialiased">
       <SiteHeader />
       <main>{children}</main>
       <SiteFooter />

@@ -119,7 +119,7 @@ export default function ContactForm() {
         <div className="flex flex-col gap-2">
           <label
             htmlFor="contact-full-name"
-            className="text-sm font-medium text-slate-100"
+            className="text-sm font-medium text-white"
           >
             Full Name
           </label>
@@ -133,7 +133,7 @@ export default function ContactForm() {
             autoComplete="name"
             aria-invalid={Boolean(showErr("fullName"))}
             aria-describedby={showErr("fullName") ? "err-fullName" : undefined}
-            className="contact-field h-12 w-full rounded-lg border border-slate-700 bg-[#27271f] px-4 text-slate-100 placeholder:text-slate-400 focus:border-[#f5cd05] focus:outline-none focus:ring-1 focus:ring-[#f5cd05]"
+            className="contact-field h-12 w-full rounded-lg px-4 text-white placeholder:text-brand-muted focus:border-brand-gold focus:outline-none focus:ring-1 focus:ring-brand-gold"
           />
           {showErr("fullName") ? (
             <p id="err-fullName" className="text-sm text-red-400">
@@ -144,7 +144,7 @@ export default function ContactForm() {
         <div className="flex flex-col gap-2">
           <label
             htmlFor="contact-email"
-            className="text-sm font-medium text-slate-100"
+            className="text-sm font-medium text-white"
           >
             Email Address
           </label>
@@ -159,7 +159,7 @@ export default function ContactForm() {
             autoComplete="email"
             aria-invalid={Boolean(showErr("email"))}
             aria-describedby={showErr("email") ? "err-email" : undefined}
-            className="contact-field h-12 w-full rounded-lg border border-slate-700 bg-[#27271f] px-4 text-slate-100 placeholder:text-slate-400 focus:border-[#f5cd05] focus:outline-none focus:ring-1 focus:ring-[#f5cd05]"
+            className="contact-field h-12 w-full rounded-lg px-4 text-white placeholder:text-brand-muted focus:border-brand-gold focus:outline-none focus:ring-1 focus:ring-brand-gold"
           />
           {showErr("email") ? (
             <p id="err-email" className="text-sm text-red-400">
@@ -171,10 +171,10 @@ export default function ContactForm() {
       <div className="flex flex-col gap-2">
         <label
           htmlFor="contact-phone"
-          className="text-sm font-medium text-slate-100"
+          className="text-sm font-medium text-white"
         >
           Phone Number{" "}
-          <span className="font-normal text-slate-500">(optional)</span>
+          <span className="font-normal text-brand-muted">(optional)</span>
         </label>
         <input
           id="contact-phone"
@@ -187,7 +187,7 @@ export default function ContactForm() {
           autoComplete="tel"
           aria-invalid={Boolean(showErr("phone"))}
           aria-describedby={showErr("phone") ? "err-phone" : undefined}
-          className="contact-field h-12 w-full rounded-lg border border-slate-700 bg-[#27271f] px-4 text-slate-100 placeholder:text-slate-400 focus:border-[#f5cd05] focus:outline-none focus:ring-1 focus:ring-[#f5cd05]"
+          className="contact-field h-12 w-full rounded-lg px-4 text-white placeholder:text-brand-muted focus:border-brand-gold focus:outline-none focus:ring-1 focus:ring-brand-gold"
         />
         {showErr("phone") ? (
           <p id="err-phone" className="text-sm text-red-400">
@@ -198,7 +198,7 @@ export default function ContactForm() {
       <div className="flex flex-col gap-2">
         <label
           htmlFor="contact-message"
-          className="text-sm font-medium text-slate-100"
+          className="text-sm font-medium text-white"
         >
           Message
         </label>
@@ -213,9 +213,9 @@ export default function ContactForm() {
           placeholder="Enter your message"
           aria-invalid={Boolean(showErr("message"))}
           aria-describedby={showErr("message") ? "err-message" : undefined}
-          className="contact-field w-full resize-none rounded-lg border border-slate-700 bg-[#27271f] p-4 text-slate-100 placeholder:text-slate-400 focus:border-[#f5cd05] focus:outline-none focus:ring-1 focus:ring-[#f5cd05]"
+          className="contact-field w-full resize-none rounded-lg p-4 text-white placeholder:text-brand-muted focus:border-brand-gold focus:outline-none focus:ring-1 focus:ring-brand-gold"
         />
-        <p className="text-xs text-slate-500">
+        <p className="text-xs text-brand-muted">
           {formData.message.trim().length}/{MESSAGE_MAX} · min {MESSAGE_MIN}{" "}
           characters
         </p>
@@ -240,12 +240,12 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={!isValid || sending}
-        className="flex h-14 w-full items-center justify-center gap-2 rounded-lg bg-[#f5cd05] text-lg font-bold text-[#23200f] shadow-lg shadow-[#f5cd05]/10 transition-all hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50"
+        className="brand-btn-primary h-14 w-full justify-center text-lg disabled:cursor-not-allowed disabled:opacity-50"
       >
         <span>{sending ? "Sending…" : "Send Message"}</span>
         {!sending ? (
           <span
-            className="material-symbols-outlined text-[#23200f]"
+            className="material-symbols-outlined text-charcoal-900"
             aria-hidden
           >
             send

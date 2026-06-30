@@ -2,7 +2,7 @@ import { React, useState } from "react";
 import "./App.css";
 import menuIcon from "../src/icons/menu-alt-02-svgrepo-com.svg";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import feemPipoLogo from "../src/logos/feempipoLogo_cropped.png";
+import feemPipoLogo from "../src/logos/feempipoLogo_cropped.webp";
 import back from "../src/icons/arrow-back-svgrepo-com.svg";
 
 export const Header = () => {
@@ -39,7 +39,7 @@ export const Header = () => {
         <img
           className="feem-pipo-logo"
           src={feemPipoLogo}
-          alt="feem pipo"
+          alt="Feempipo"
           style={{
             transform: `translate(${offset.x}px, ${offset.y}px)`,
             transition: "transform 0.1s ease-out",

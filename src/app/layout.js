@@ -1,8 +1,20 @@
 import "./globals.css";
-import { Inter } from "next/font/google";
-import { SITE_URL } from "../lib/seo";
+import { Montserrat, Source_Sans_3 } from "next/font/google";
+import { ORGANIZATION_LOGO_URL, SITE_URL } from "../lib/seo";
 
-const inter = Inter({ subsets: ["latin"], display: "swap" });
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-montserrat",
+  weight: ["400", "500", "600", "700", "800", "900"],
+});
+
+const sourceSans = Source_Sans_3({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-source-sans",
+  weight: ["400", "500", "600", "700"],
+});
 
 const organizationJsonLd = {
   "@context": "https://schema.org",
@@ -10,7 +22,7 @@ const organizationJsonLd = {
   name: "Feempipo",
   alternateName: "Feempipo LTD",
   url: SITE_URL,
-  logo: `${SITE_URL}/images/feempipo-profile-image.png`,
+  logo: ORGANIZATION_LOGO_URL,
   description:
     "Multimedia production company creating premium African movies, series, documentaries, and comedy for global audiences.",
   sameAs: [
@@ -86,7 +98,7 @@ export const metadata = {
 };
 
 export const viewport = {
-  themeColor: "#23200f",
+  themeColor: "#0d0d0d",
 };
 
 export default function RootLayout({ children }) {
@@ -104,7 +116,7 @@ export default function RootLayout({ children }) {
           }}
         />
       </head>
-      <body className={inter.className}>
+      <body className={`${montserrat.variable} ${sourceSans.variable} font-sans antialiased`}>
         <div className="bg-abstract-motion min-h-screen">
           <div className="blob-1" aria-hidden />
           <div className="blob-2" aria-hidden />
