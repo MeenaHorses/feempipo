@@ -4,6 +4,11 @@ import SiteFooter from "../components/SiteFooter";
 import RevealOnScroll from "../components/RevealOnScroll";
 import { documentaries, getYouTubeThumb } from "../../data/media";
 
+const DOCUMENTARY_COLLAB_MAILTO =
+  "mailto:Feempipo@gmail.com" +
+  `?subject=${encodeURIComponent("Documentary Collaboration Inquiry")}` +
+  `&body=${encodeURIComponent("Hi Feempipo team,\nI'd like to discuss a potential story/project…")}`;
+
 export const metadata = buildPageMetadata({
   title: "Documentaries",
   description:
@@ -57,6 +62,26 @@ export default function DocumentariesPage() {
               </a>
             </article>
           ))}
+        </section>
+        </RevealOnScroll>
+
+        <RevealOnScroll>
+        <section className="brand-cta-banner mt-16 flex flex-col items-center justify-between gap-8 p-10 sm:p-12 md:flex-row">
+          <div className="text-center md:text-left">
+            <h2 className="mb-4 text-3xl font-black tracking-tight text-brand-bg sm:text-4xl">
+              Tell powerful African stories with us.
+            </h2>
+            <p className="max-w-md font-sans font-normal text-brand-bg/80">
+              Partner with Feempipo to produce impactful documentaries that
+              inform, inspire, and reach a global audience.
+            </p>
+          </div>
+          <a
+            href={DOCUMENTARY_COLLAB_MAILTO}
+            className="shrink-0 rounded-xl bg-brand-bg px-8 py-4 font-semibold tracking-tight text-brand-gold transition-transform hover:scale-105 active:scale-95"
+          >
+            Email us
+          </a>
         </section>
         </RevealOnScroll>
       </main>

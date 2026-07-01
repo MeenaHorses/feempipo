@@ -122,10 +122,17 @@ export default async function SeriesPage() {
                 target="_blank"
                 rel="noreferrer"
               >
-                <div className="relative mb-3 aspect-video">
-                  <div className="absolute inset-0 translate-x-2 translate-y-2 rounded-xl bg-gold-glow/50" />
-                  <div className="absolute inset-0 translate-x-1 translate-y-1 rounded-xl bg-gold-glow/30" />
-                  <div className="absolute inset-0 overflow-hidden rounded-xl border border-brand-border">
+                <div className="relative mb-3 pr-6 pb-6">
+                  <div className="relative aspect-video w-full">
+                    <div
+                      className="pointer-events-none absolute inset-0 translate-x-5 translate-y-4 rounded-xl border border-soft-gold/15 bg-charcoal-900 shadow-[6px_6px_0_rgba(0,0,0,0.45)]"
+                      aria-hidden
+                    />
+                    <div
+                      className="pointer-events-none absolute inset-0 translate-x-2.5 translate-y-2 rounded-xl border border-soft-gold/22 bg-charcoal-800 shadow-[3px_3px_0_rgba(0,0,0,0.35)]"
+                      aria-hidden
+                    />
+                    <div className="absolute inset-0 overflow-hidden rounded-xl border border-soft-gold/28 bg-charcoal-900 shadow-lg">
                   <img
                     src={playlist.thumbnail}
                     alt={`${playlist.title} series playlist thumbnail`}
@@ -138,6 +145,7 @@ export default async function SeriesPage() {
                       </span>
                     </div>
                   </div>
+                    </div>
                   </div>
                 </div>
                 <h2 className="line-clamp-2 font-bold text-white transition-colors group-hover:text-brand-gold">
@@ -149,6 +157,28 @@ export default async function SeriesPage() {
               </a>
             </article>
           ))}
+        </section>
+        </RevealOnScroll>
+
+        <RevealOnScroll>
+        <section className="brand-cta-banner mt-16 flex flex-col items-center justify-between gap-8 p-10 sm:p-12 md:flex-row">
+          <div className="text-center md:text-left">
+            <h2 className="mb-4 text-3xl font-black tracking-tight text-brand-bg sm:text-4xl">
+              Find the stories worth watching.
+            </h2>
+            <p className="max-w-md font-sans font-normal text-brand-bg/80">
+              From Feempipo&apos;s cinematic series to YawaSkits&apos; episodes,
+              discover stories across platforms.
+            </p>
+          </div>
+          <a
+            href="https://www.youtube.com/@yawaskits/playlists"
+            target="_blank"
+            rel="noreferrer"
+            className="shrink-0 rounded-xl bg-brand-bg px-8 py-4 font-semibold tracking-tight text-brand-gold transition-transform hover:scale-105 active:scale-95"
+          >
+            Explore the Stories
+          </a>
         </section>
         </RevealOnScroll>
       </main>

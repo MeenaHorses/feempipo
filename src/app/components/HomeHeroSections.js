@@ -190,7 +190,7 @@ export default function HomeHeroSections() {
                 <div
                   key={card.id}
                   id={card.id}
-                  className="brand-card group relative h-full overflow-hidden p-8"
+                  className="brand-card brand-expertise-card group relative h-full overflow-hidden p-8"
                 >
                   <div className="brand-icon-wrap mb-6 h-14 w-14">
                     <span className="material-symbols-outlined text-3xl">

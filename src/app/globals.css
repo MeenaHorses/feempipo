@@ -120,42 +120,36 @@ body {
   );
 }
 
-/* ── Cards: gold-glow top-light on charcoal ── */
+/* ── Cards: midnight gradient + gold border (no heavy top glow) ── */
 .brand-card {
   position: relative;
   overflow: hidden;
   border-radius: 1rem;
-  border: 1px solid var(--border-subtle);
-  background: linear-gradient(
-    180deg,
-    rgba(58, 42, 10, 0.55) 0%,
-    var(--charcoal-800) 32%,
-    var(--charcoal-800) 100%
-  );
-  box-shadow:
-    0 8px 32px -8px rgba(0, 0, 0, 0.55),
-    inset 0 1px 0 rgba(255, 223, 163, 0.06);
+  border: 1px solid rgba(246, 166, 11, 0.22);
+  background: linear-gradient(180deg, #1a1a1a 0%, #0d0d0d 100%);
+  box-shadow: 0 8px 32px -8px rgba(0, 0, 0, 0.55);
   transition:
-    border-color 0.3s ease,
-    box-shadow 0.3s ease,
-    transform 0.3s ease;
-}
-
-.brand-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(246, 166, 11, 0.08) 0%, transparent 70%);
-  pointer-events: none;
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .brand-card:hover {
-  border-color: rgba(246, 166, 11, 0.28);
+  border-color: rgba(246, 166, 11, 0.22);
   transform: translateY(-4px);
+  box-shadow: 0 14px 40px -8px rgba(0, 0, 0, 0.65);
+}
+
+.brand-expertise-card {
+  background: linear-gradient(180deg, #222222 0%, #121212 48%, #070707 100%);
   box-shadow:
-    0 16px 44px -8px rgba(246, 166, 11, 0.12),
-    0 8px 32px -8px rgba(0, 0, 0, 0.6),
-    inset 0 1px 0 rgba(255, 223, 163, 0.08);
+    0 8px 32px -8px rgba(0, 0, 0, 0.65),
+    inset 0 1px 0 rgba(255, 255, 255, 0.03);
+}
+
+.brand-expertise-card:hover {
+  box-shadow:
+    0 14px 40px -8px rgba(0, 0, 0, 0.75),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
 }
 
 .brand-media-card {
@@ -224,37 +218,22 @@ body {
   overflow: hidden;
   padding: 1.5rem;
   border-radius: 1rem;
-  border: 1px solid var(--border-subtle);
-  background: linear-gradient(
-    180deg,
-    rgba(58, 42, 10, 0.55) 0%,
-    var(--charcoal-800) 32%,
-    var(--charcoal-800) 100%
-  );
+  border: 1px solid rgba(246, 166, 11, 0.22);
+  background: linear-gradient(180deg, #222222 0%, #121212 48%, #070707 100%);
   box-shadow:
-    0 8px 32px -8px rgba(0, 0, 0, 0.55),
-    inset 0 1px 0 rgba(255, 223, 163, 0.06);
+    0 8px 32px -8px rgba(0, 0, 0, 0.65),
+    inset 0 1px 0 rgba(255, 255, 255, 0.03);
   transition:
-    border-color 0.3s ease,
-    box-shadow 0.3s ease,
-    transform 0.3s ease;
-}
-
-.brand-stat::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(246, 166, 11, 0.08) 0%, transparent 70%);
-  pointer-events: none;
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .brand-stat:hover {
-  border-color: rgba(246, 166, 11, 0.28);
+  border-color: rgba(246, 166, 11, 0.22);
   transform: translateY(-4px);
   box-shadow:
-    0 16px 44px -8px rgba(246, 166, 11, 0.12),
-    0 8px 32px -8px rgba(0, 0, 0, 0.6),
-    inset 0 1px 0 rgba(255, 223, 163, 0.08);
+    0 14px 40px -8px rgba(0, 0, 0, 0.75),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
 }
 
 .brand-cta {
@@ -285,36 +264,22 @@ body {
   position: relative;
   overflow: hidden;
   border-radius: 1rem;
-  border: 1px solid var(--border-subtle);
-  background: linear-gradient(
-    180deg,
-    rgba(58, 42, 10, 0.22) 0%,
-    var(--charcoal-900) 28%,
-    var(--charcoal-900) 100%
-  );
+  border: 1px solid rgba(246, 166, 11, 0.22);
+  background: linear-gradient(180deg, #222222 0%, #121212 48%, #070707 100%);
   box-shadow:
-    0 6px 28px -6px rgba(0, 0, 0, 0.55),
-    inset 0 1px 0 rgba(255, 223, 163, 0.04);
+    0 8px 32px -8px rgba(0, 0, 0, 0.65),
+    inset 0 1px 0 rgba(255, 255, 255, 0.03);
   transition:
-    border-color 0.3s ease,
-    box-shadow 0.3s ease,
-    transform 0.3s ease;
-}
-
-.brand-documentary-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse 80% 45% at 50% 0%, rgba(246, 166, 11, 0.05) 0%, transparent 70%);
-  pointer-events: none;
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .brand-documentary-card:hover {
-  border-color: rgba(246, 166, 11, 0.2);
+  border-color: rgba(246, 166, 11, 0.22);
   transform: translateY(-4px);
   box-shadow:
-    0 12px 36px -6px rgba(246, 166, 11, 0.08),
-    0 6px 28px -6px rgba(0, 0, 0, 0.6);
+    0 14px 40px -8px rgba(0, 0, 0, 0.75),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
 }
 
 .brand-icon-wrap {

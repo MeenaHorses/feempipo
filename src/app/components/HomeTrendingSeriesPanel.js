@@ -59,7 +59,7 @@ export default function HomeTrendingSeriesPanel({ episodes, gridClass, viewAllHr
               </p>
             </div>
             <a
-              className="group flex w-full shrink-0 items-center justify-center gap-2 rounded-xl border border-brand-gold/30 bg-brand-gold/10 px-5 py-3 text-sm font-bold text-brand-gold transition-all hover:border-brand-gold/50 hover:bg-brand-gold/15 sm:w-fit sm:justify-start md:text-base"
+              className="group hidden shrink-0 items-center gap-2 rounded-xl border border-brand-gold/30 bg-brand-gold/10 px-5 py-3 text-sm font-bold text-brand-gold transition-all hover:border-brand-gold/50 hover:bg-brand-gold/15 lg:flex lg:w-fit lg:justify-start md:text-base"
               href={viewAllHref}
               target="_blank"
               rel="noreferrer"
@@ -100,6 +100,18 @@ export default function HomeTrendingSeriesPanel({ episodes, gridClass, viewAllHr
               </article>
             ))}
           </div>
+
+          <a
+            className="group mt-8 flex w-full shrink-0 items-center justify-center gap-2 rounded-xl border border-brand-gold/30 bg-brand-gold/10 px-5 py-3 text-sm font-bold text-brand-gold transition-all hover:border-brand-gold/50 hover:bg-brand-gold/15 lg:hidden md:text-base"
+            href={viewAllHref}
+            target="_blank"
+            rel="noreferrer"
+          >
+            View All
+            <span className="material-symbols-outlined text-[20px] transition-transform group-hover:translate-x-1">
+              arrow_forward
+            </span>
+          </a>
         </div>
       </RevealOnScroll>
     </div>

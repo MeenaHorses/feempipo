@@ -138,7 +138,7 @@ export default function AboutUsPage() {
               Our Expertise
             </h2>
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
-              <div className="brand-card relative p-6">
+              <div className="brand-card brand-expertise-card relative p-6">
                 <h5 className="relative z-[1] mb-3 text-xl font-bold text-brand-gold">
                   Feature Films
                 </h5>
@@ -146,7 +146,7 @@ export default function AboutUsPage() {
                   Compelling narratives designed for the big screen.
                 </p>
               </div>
-              <div className="brand-card relative p-6">
+              <div className="brand-card brand-expertise-card relative p-6">
                 <h5 className="relative z-[1] mb-3 text-xl font-bold text-brand-gold">
                   TV Series
                 </h5>
@@ -154,7 +154,7 @@ export default function AboutUsPage() {
                   Engaging episodic content for terrestrial and streaming.
                 </p>
               </div>
-              <div className="brand-card relative p-6">
+              <div className="brand-card brand-expertise-card relative p-6">
                 <h5 className="relative z-[1] mb-3 text-xl font-bold text-brand-gold">
                   Documentaries
                 </h5>
@@ -162,7 +162,7 @@ export default function AboutUsPage() {
                   Impactful real-life stories told with sensitivity.
                 </p>
               </div>
-              <div className="brand-card relative p-6">
+              <div className="brand-card brand-expertise-card relative p-6">
                 <h5 className="relative z-[1] mb-3 text-xl font-bold text-brand-gold">
                   Digital Media
                 </h5>
