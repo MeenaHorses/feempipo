@@ -38,7 +38,7 @@ export default function ContactUsPage() {
                 <div className="space-y-6">
                   <div className="brand-info-card flex items-start gap-5 p-4">
                     <div className="brand-icon-wrap size-14 shrink-0">
-                      <span className="material-symbols-outlined text-[32px] leading-none">call</span>
+                      <span className="material-symbols-outlined text-[32px] leading-none" aria-hidden>call</span>
                     </div>
                     <div className="flex flex-col justify-center">
                       <p className="mb-1 text-sm font-semibold uppercase tracking-wider text-brand-gold/70">
@@ -49,7 +49,7 @@ export default function ContactUsPage() {
                   </div>
                   <div className="brand-info-card flex items-start gap-5 p-4">
                     <div className="brand-icon-wrap size-14 shrink-0">
-                      <span className="material-symbols-outlined text-[32px] leading-none">mail</span>
+                      <span className="material-symbols-outlined text-[32px] leading-none" aria-hidden>mail</span>
                     </div>
                     <div className="flex flex-col justify-center">
                       <p className="mb-1 text-sm font-semibold uppercase tracking-wider text-brand-gold/70">

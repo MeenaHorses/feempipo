@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { buildPageMetadata } from "../../lib/seo";
 import SiteHeader from "../components/SiteHeader";
 import SiteFooter from "../components/SiteFooter";
@@ -55,25 +56,29 @@ export default async function YawaSkitsPage() {
     <div className="min-h-screen cinematic-page font-display text-white">
       <SiteHeader />
 
-      <main className="mx-auto w-full max-w-[1200px] flex-1 px-4 py-8 md:px-10">
+      <main className="mx-auto w-full max-w-[1200px] flex-1 px-4 py-8 pb-24 md:px-10">
         <RevealOnScroll>
         <section className="mb-12 flex flex-col gap-8 md:flex-row">
           <div className="flex-1 space-y-6">
             <div className="flex items-center gap-4">
               <div className="rounded-full border-2 border-brand-gold bg-brand-gold/20 p-1">
-                <div
-                  className="size-16 aspect-square rounded-full bg-cover bg-center"
-                  style={{
-                    backgroundImage: 'url("/images/yawaskits-channel.png")'
-                  }}
-                />
+                <div className="relative size-16 overflow-hidden rounded-full">
+                  <Image
+                    src="/images/yawaskits-channel.webp"
+                    alt=""
+                    aria-hidden
+                    width={64}
+                    height={64}
+                    className="h-full w-full object-cover"
+                  />
+                </div>
               </div>
               <div>
                 <h1 className="text-4xl font-black tracking-tight text-white md:text-5xl">
                   YawaSkits
                 </h1>
                 <p className="flex items-center gap-2 text-lg font-bold text-brand-gold">
-                  <span className="material-symbols-outlined text-sm">
+                  <span className="material-symbols-outlined text-sm" aria-hidden>
                     verified
                   </span>
                   Official Channel
@@ -90,14 +95,14 @@ export default async function YawaSkitsPage() {
               , the channel has become a favorite for audiences who enjoy
               authentic African humor.
             </p>
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-col gap-4 sm:flex-row sm:flex-wrap">
               <a
                 href={YAWA_CHANNEL_URL}
                 target="_blank"
-                rel="noreferrer"
-                className="flex items-center gap-2 rounded-xl bg-brand-gold px-8 py-3 text-base font-bold text-charcoal-900 transition-transform hover:scale-105"
+                rel="noopener noreferrer"
+                className="flex w-full items-center justify-center gap-2 rounded-xl bg-brand-gold px-8 py-3 text-base font-bold text-charcoal-900 transition-transform hover:scale-105 sm:w-auto"
               >
-                <span className="material-symbols-outlined">
+                <span className="material-symbols-outlined" aria-hidden>
                   notifications_active
                 </span>
                 Subscribe
@@ -105,8 +110,8 @@ export default async function YawaSkitsPage() {
               <a
                 href="https://www.youtube.com/@yawaskits/playlists"
                 target="_blank"
-                rel="noreferrer"
-                className="rounded-xl border border-brand-gold/30 bg-brand-gold/10 px-8 py-3 text-base font-bold text-brand-gold transition-all hover:bg-brand-gold/20"
+                rel="noopener noreferrer"
+                className="flex w-full items-center justify-center rounded-xl border border-brand-gold/30 bg-brand-gold/10 px-8 py-3 text-base font-bold text-brand-gold transition-all hover:bg-brand-gold/20 sm:w-auto"
               >
                 View Playlists
               </a>
@@ -154,7 +159,7 @@ export default async function YawaSkitsPage() {
           <a
             href="https://www.youtube.com/@yawaskits/community"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             className="shrink-0 rounded-xl bg-brand-bg px-8 py-4 font-semibold tracking-tight text-brand-gold transition-transform hover:scale-105 active:scale-95"
           >
             Join Community

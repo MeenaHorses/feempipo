@@ -25,6 +25,7 @@ function TrendingEpisodeThumb({ candidates, alt }) {
       sizes="(max-width: 480px) 100vw, (max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
       quality={88}
       className="origin-center object-cover object-center transition-transform duration-500 ease-out group-hover:scale-105"
+      loading="lazy"
       onError={() =>
         setIndex((i) => {
           const next = i + 1;
@@ -62,10 +63,10 @@ export default function HomeTrendingSeriesPanel({ episodes, gridClass, viewAllHr
               className="group hidden shrink-0 items-center gap-2 rounded-xl border border-brand-gold/30 bg-brand-gold/10 px-5 py-3 text-sm font-bold text-brand-gold transition-all hover:border-brand-gold/50 hover:bg-brand-gold/15 lg:flex lg:w-fit lg:justify-start md:text-base"
               href={viewAllHref}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
             >
               View All
-              <span className="material-symbols-outlined text-[20px] transition-transform group-hover:translate-x-1">
+              <span className="material-symbols-outlined text-[20px] transition-transform group-hover:translate-x-1" aria-hidden>
                 arrow_forward
               </span>
             </a>
@@ -77,7 +78,7 @@ export default function HomeTrendingSeriesPanel({ episodes, gridClass, viewAllHr
                 <a
                   href={ep.watchUrl}
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                   className="group block"
                 >
                   <div className="relative mb-4 aspect-video w-full overflow-hidden rounded-2xl sm:mb-5">
@@ -87,7 +88,7 @@ export default function HomeTrendingSeriesPanel({ episodes, gridClass, viewAllHr
                     />
                     <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
                       <div className="flex size-[4.25rem] items-center justify-center rounded-full bg-brand-gold opacity-0 shadow-lg shadow-black/40 transition-opacity duration-300 group-hover:opacity-100 md:size-[4.75rem]">
-                        <span className="material-symbols-outlined text-[2.75rem] text-charcoal-900 md:text-[3rem]">
+                        <span className="material-symbols-outlined text-[2.75rem] text-charcoal-900 md:text-[3rem]" aria-hidden>
                           play_arrow
                         </span>
                       </div>
@@ -105,10 +106,10 @@ export default function HomeTrendingSeriesPanel({ episodes, gridClass, viewAllHr
             className="group mt-8 flex w-full shrink-0 items-center justify-center gap-2 rounded-xl border border-brand-gold/30 bg-brand-gold/10 px-5 py-3 text-sm font-bold text-brand-gold transition-all hover:border-brand-gold/50 hover:bg-brand-gold/15 lg:hidden md:text-base"
             href={viewAllHref}
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
           >
             View All
-            <span className="material-symbols-outlined text-[20px] transition-transform group-hover:translate-x-1">
+            <span className="material-symbols-outlined text-[20px] transition-transform group-hover:translate-x-1" aria-hidden>
               arrow_forward
             </span>
           </a>

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { buildPageMetadata } from "../../lib/seo";
 import SiteHeader from "../components/SiteHeader";
 import SiteFooter from "../components/SiteFooter";
@@ -42,17 +43,22 @@ export default function DocumentariesPage() {
               <a
                 href={doc.url.replace("/embed/", "/watch?v=")}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 className="relative z-[1] block"
               >
-                <img
-                  src={getYouTubeThumb(doc.url)}
-                  alt={`${doc.title} documentary thumbnail`}
-                  className="aspect-video w-full rounded-lg object-cover ring-1 ring-brand-border transition-transform duration-500 group-hover:scale-[1.02]"
-                />
-                <h2 className="mt-5 text-xl font-bold text-white">
+                <div className="relative aspect-video w-full overflow-hidden rounded-lg ring-1 ring-brand-border">
+                  <Image
+                    src={getYouTubeThumb(doc.url)}
+                    alt={`${doc.title} documentary thumbnail`}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                    loading="lazy"
+                  />
+                </div>
+                <h3 className="mt-5 text-xl font-bold text-white">
                   {doc.title}
-                </h2>
+                </h3>
                 <p className="mt-2 text-sm font-semibold uppercase tracking-wide text-brand-gold">
                   {doc.category}
                 </p>

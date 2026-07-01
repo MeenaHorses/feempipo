@@ -39,7 +39,7 @@ export default function PrivacyPolicyPage() {
         <div className="mb-20 grid grid-cols-1 gap-6 md:grid-cols-3">
           <div className="flex flex-col justify-between rounded-xl bg-gradient-to-br from-[#3a3a3a] to-[#2a2a2a] p-8 md:col-span-2">
             <div>
-              <span className="material-symbols-outlined mb-4 text-4xl text-brand-gold">
+              <span className="material-symbols-outlined mb-4 text-4xl text-brand-gold" aria-hidden>
                 security
               </span>
               <h3 className="mb-3 text-2xl font-extrabold text-white">Data protection</h3>
@@ -56,7 +56,7 @@ export default function PrivacyPolicyPage() {
           </div>
           <div className="flex flex-col justify-between rounded-xl border border-brand-border brand-card p-8">
             <div>
-              <span className="material-symbols-outlined mb-4 text-4xl text-brand-gold">
+              <span className="material-symbols-outlined mb-4 text-4xl text-brand-gold" aria-hidden>
                 visibility_off
               </span>
               <h3 className="mb-3 text-2xl font-extrabold text-white">No selling your data</h3>
@@ -87,7 +87,7 @@ export default function PrivacyPolicyPage() {
               </p>
               <ul className="space-y-4">
                 <li className="flex gap-4">
-                  <span className="material-symbols-outlined shrink-0 text-brand-gold">
+                  <span className="material-symbols-outlined shrink-0 text-brand-gold" aria-hidden>
                     check_circle
                   </span>
                   <span>
@@ -97,7 +97,7 @@ export default function PrivacyPolicyPage() {
                   </span>
                 </li>
                 <li className="flex gap-4">
-                  <span className="material-symbols-outlined shrink-0 text-brand-gold">
+                  <span className="material-symbols-outlined shrink-0 text-brand-gold" aria-hidden>
                     check_circle
                   </span>
                   <span>
@@ -107,7 +107,7 @@ export default function PrivacyPolicyPage() {
                   </span>
                 </li>
                 <li className="flex gap-4">
-                  <span className="material-symbols-outlined shrink-0 text-brand-gold">
+                  <span className="material-symbols-outlined shrink-0 text-brand-gold" aria-hidden>
                     check_circle
                   </span>
                   <span>
@@ -185,7 +185,7 @@ export default function PrivacyPolicyPage() {
                 <details className="group overflow-hidden rounded-xl border border-brand-border brand-card transition-all">
                   <summary className="flex cursor-pointer items-center justify-between p-6 font-bold text-brand-text">
                     Access and updates
-                    <span className="material-symbols-outlined transition-transform group-open:rotate-180">
+                    <span className="material-symbols-outlined transition-transform group-open:rotate-180" aria-hidden>
                       expand_more
                     </span>
                   </summary>
@@ -197,7 +197,7 @@ export default function PrivacyPolicyPage() {
                 <details className="group overflow-hidden rounded-xl border border-brand-border brand-card transition-all">
                   <summary className="flex cursor-pointer items-center justify-between p-6 font-bold text-brand-text">
                     Deletion requests
-                    <span className="material-symbols-outlined transition-transform group-open:rotate-180">
+                    <span className="material-symbols-outlined transition-transform group-open:rotate-180" aria-hidden>
                       expand_more
                     </span>
                   </summary>
@@ -250,7 +250,7 @@ export default function PrivacyPolicyPage() {
               className="inline-flex items-center gap-2 rounded-xl bg-brand-gold px-8 py-4 font-black tracking-widest text-charcoal-900 uppercase transition-transform hover:scale-[1.02]"
             >
               Contact us
-              <span className="material-symbols-outlined text-charcoal-900">mail</span>
+              <span className="material-symbols-outlined text-charcoal-900" aria-hidden>mail</span>
             </Link>
           </div>
         </section>

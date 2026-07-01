@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { buildPageMetadata } from "../../lib/seo";
 import SiteHeader from "../components/SiteHeader";
 import SiteFooter from "../components/SiteFooter";
@@ -120,7 +121,7 @@ export default async function SeriesPage() {
               <a
                 href={playlist.url}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
               >
                 <div className="relative mb-3 pr-6 pb-6">
                   <div className="relative aspect-video w-full">
@@ -133,14 +134,17 @@ export default async function SeriesPage() {
                       aria-hidden
                     />
                     <div className="absolute inset-0 overflow-hidden rounded-xl border border-soft-gold/28 bg-charcoal-900 shadow-lg">
-                  <img
+                  <Image
                     src={playlist.thumbnail}
                     alt={`${playlist.title} series playlist thumbnail`}
-                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-110"
+                    loading="lazy"
                   />
                   <div className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 transition-opacity group-hover:opacity-100">
                     <div className="flex size-14 items-center justify-center rounded-full bg-brand-gold">
-                      <span className="material-symbols-outlined text-3xl text-charcoal-900">
+                      <span className="material-symbols-outlined text-3xl text-charcoal-900" aria-hidden>
                         play_arrow
                       </span>
                     </div>
@@ -148,9 +152,9 @@ export default async function SeriesPage() {
                     </div>
                   </div>
                 </div>
-                <h2 className="line-clamp-2 font-bold text-white transition-colors group-hover:text-brand-gold">
+                <h3 className="line-clamp-2 font-bold text-white transition-colors group-hover:text-brand-gold">
                   {playlist.title}
-                </h2>
+                </h3>
                 <p className="mt-1 text-sm text-brand-muted">
                   {playlist.itemCount > 0 ? `${playlist.itemCount} episodes` : "View full playlist"}
                 </p>
@@ -174,7 +178,7 @@ export default async function SeriesPage() {
           <a
             href="https://www.youtube.com/@yawaskits/playlists"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             className="shrink-0 rounded-xl bg-brand-bg px-8 py-4 font-semibold tracking-tight text-brand-gold transition-transform hover:scale-105 active:scale-95"
           >
             Explore the Stories

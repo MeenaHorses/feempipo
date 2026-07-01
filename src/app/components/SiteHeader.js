@@ -58,19 +58,19 @@ export default function SiteHeader() {
   return (
     <>
     <header className="sticky top-0 z-50 w-full border-b border-brand-border bg-charcoal-900/85 shadow-[0_4px_30px_-4px_rgba(0,0,0,0.5)] backdrop-blur-md">
-      <div className="mx-auto flex h-16 max-w-[1500px] items-center justify-between gap-1.5 px-2 sm:gap-2 sm:px-3 md:h-20 md:gap-3 md:px-4 lg:gap-4 lg:px-6">
-        <Link
-          href="/"
-          className="flex min-w-0 flex-1 items-center pr-1 sm:pr-2"
-          aria-label="Feempipo home"
-        >
-          <div className="w-[6.5rem] shrink-0 sm:w-32 md:w-40 lg:w-52">
+      <div className="site-header-inner mx-auto flex h-16 max-w-[1500px] items-center justify-between gap-1.5 px-2 sm:gap-2 sm:px-3 md:gap-3 md:px-4 lg:gap-3 lg:px-5 xl:h-20 xl:gap-4 xl:px-6">
+        <div className="flex min-w-0 flex-1 items-center pr-1 sm:pr-2">
+          <Link
+            href="/"
+            className="inline-block w-[6.5rem] shrink-0 sm:w-32 md:w-36 lg:w-32 xl:w-52"
+            aria-label="Feempipo home"
+          >
             <Image
               src={feemPipoLogo}
               alt="Feempipo"
               width={464}
               height={89}
-              sizes="(max-width: 640px) 104px, (max-width: 768px) 128px, (max-width: 1024px) 160px, 208px"
+              sizes="(max-width: 640px) 104px, (max-width: 768px) 128px, (max-width: 1279px) 128px, 208px"
               priority
               className="h-auto w-full object-contain"
               style={{
@@ -80,10 +80,10 @@ export default function SiteHeader() {
               onMouseMove={handleLogoMouseMove}
               onMouseLeave={resetLogoOffset}
             />
-          </div>
-        </Link>
+          </Link>
+        </div>
 
-        <nav className="hidden items-center gap-5 lg:flex" aria-label="Main">
+        <nav className="hidden items-center gap-4 lg:flex xl:gap-5" aria-label="Main">
           {links.map((link) => {
             const active = pathname === link.href;
             return (
@@ -103,7 +103,7 @@ export default function SiteHeader() {
         <div className="flex shrink-0 items-center gap-1 sm:gap-2 md:gap-3 lg:gap-4">
           <Link
             href="/contact-us"
-            className="inline-flex items-center justify-center whitespace-nowrap rounded-lg bg-brand-gold px-2.5 py-1.5 text-[11px] font-bold leading-tight text-charcoal-900 shadow-[0_0_20px_-4px_rgba(246,166,11,0.4)] transition-all hover:bg-gold-accent sm:px-3.5 sm:py-2 sm:text-xs md:px-5 md:py-2.5 md:text-sm lg:px-6 lg:py-3"
+            className="inline-flex h-9 items-center justify-center whitespace-nowrap rounded-lg bg-brand-gold px-3.5 text-xs font-bold leading-none text-charcoal-900 shadow-[0_0_20px_-4px_rgba(246,166,11,0.4)] transition-all hover:bg-gold-accent sm:h-10 sm:px-4 xl:h-auto xl:px-6 xl:py-3 xl:text-sm"
           >
             Contact Us
           </Link>
@@ -115,7 +115,7 @@ export default function SiteHeader() {
             aria-label={menuOpen ? "Close menu" : "Open menu"}
             onClick={() => setMenuOpen((o) => !o)}
           >
-            <span className="material-symbols-outlined text-[22px] leading-none sm:text-2xl">
+            <span className="material-symbols-outlined text-[22px] leading-none sm:text-2xl" aria-hidden>
               {menuOpen ? "close" : "menu"}
             </span>
           </button>
@@ -157,7 +157,7 @@ export default function SiteHeader() {
                   aria-label="Close menu"
                   onClick={() => setMenuOpen(false)}
                 >
-                  <span className="material-symbols-outlined text-2xl leading-none">close</span>
+                  <span className="material-symbols-outlined text-2xl leading-none" aria-hidden>close</span>
                 </button>
               </div>
               <nav className="flex flex-1 flex-col gap-1 overflow-y-auto p-3" aria-label="Mobile main">
@@ -178,6 +178,7 @@ export default function SiteHeader() {
                         className={`material-symbols-outlined shrink-0 text-[22px] leading-none transition-transform duration-200 group-hover:scale-110 ${
                           active ? "text-brand-gold" : "text-brand-gold/70 group-hover:text-brand-gold"
                         }`}
+                        aria-hidden
                         aria-hidden
                       >
                         {link.icon}

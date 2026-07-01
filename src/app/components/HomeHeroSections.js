@@ -52,13 +52,14 @@ export default function HomeHeroSections() {
     <>
       <section
         id="hero"
-        className="relative flex min-h-[720px] items-center overflow-hidden py-12"
+        className="hero-home relative flex min-h-[calc(100dvh-4rem)] items-center overflow-hidden py-8 md:min-h-[calc(100dvh-5rem)] lg:min-h-[calc(100dvh-4rem)] lg:py-6 xl:min-h-[calc(100dvh-5rem)] xl:py-10"
       >
-        <div className="absolute inset-0 z-0">
+        <div className="hero-bg-mask absolute inset-0 z-0">
           <Image
-            alt="Cinematic production background"
+            alt=""
+            aria-hidden
             className="h-full w-full object-cover brightness-[0.72] saturate-[1.25] contrast-[1.05]"
-            src="/images/hero-video-poster.jpg"
+            src="/images/hero-video-poster.webp"
             fill
             priority
             sizes="100vw"
@@ -82,41 +83,43 @@ export default function HomeHeroSections() {
           />
         </div>
         <div className="relative z-20 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col items-center gap-12 lg:flex-row lg:gap-16">
-            <div className="w-full text-left lg:w-[45%]">
-              <span className="mb-4 inline-block rounded-full border border-brand-gold/25 bg-brand-gold/10 px-4 py-1.5 text-xs font-bold tracking-wider text-brand-gold uppercase md:text-sm">
+          <div className="hero-home-grid flex flex-col gap-10 lg:flex-row lg:items-center lg:gap-10 xl:gap-14">
+            <div className="order-1 w-full text-left lg:w-[44%]">
+              <span className="mb-4 inline-block rounded-full border border-brand-gold/25 bg-brand-gold/10 px-3.5 py-1 text-[11px] font-bold tracking-wider text-brand-gold uppercase lg:text-xs xl:px-4 xl:py-1.5 xl:text-sm">
                 Streaming Quality Stories
               </span>
-              <h1 className="mb-4 text-4xl leading-[1.1] font-black tracking-tight text-white md:text-6xl">
+              <h1 className="mb-4 text-4xl leading-[1.1] font-black tracking-tight text-white md:text-5xl lg:text-[2.125rem] lg:leading-[1.12] xl:text-6xl">
                 Premium Movies, Series, and Comedy Content from{" "}
                 <span className="text-brand-gold">Africa</span>
               </h1>
-              <p className="mb-6 max-w-2xl text-base leading-relaxed text-brand-text md:text-lg">
+              <p className="hero-home-lead mb-0 max-w-2xl text-base leading-relaxed text-brand-text lg:mb-5 lg:text-[0.9375rem] lg:leading-relaxed xl:mb-6 xl:text-lg">
                 Feempipo is a leading multimedia production company creating
                 high-quality movies, series, documentaries, and digital content
                 for global audiences. We produce engaging stories that resonate
                 across Africa and beyond.
               </p>
-              <div className="flex flex-col gap-4 sm:flex-row">
+              <div className="hero-home-actions mt-5 hidden flex-col gap-3 lg:flex xl:mt-6 xl:flex-row xl:gap-4">
                 <Link
                   href="/series"
-                  className="brand-btn-primary rounded-full px-7 py-3 text-base"
+                  className="brand-btn-primary hero-home-cta shrink-0 justify-center whitespace-nowrap rounded-full px-6 py-2.5 text-sm xl:px-7 xl:py-3 xl:text-base"
                 >
-                  <span className="material-symbols-outlined">play_circle</span>
+                  <span className="material-symbols-outlined text-xl xl:text-[1.5rem]" aria-hidden>
+                    play_circle
+                  </span>
                   Watch Featured Series
                 </Link>
                 <Link
                   href="/movies"
-                  className="brand-btn-secondary rounded-full border-2 px-7 py-3 text-base text-brand-gold"
+                  className="brand-btn-secondary hero-home-cta shrink-0 justify-center whitespace-nowrap rounded-full border-2 px-6 py-2.5 text-sm text-brand-gold xl:px-7 xl:py-3 xl:text-base"
                 >
                   Explore Movies
                 </Link>
               </div>
             </div>
-            <div className="w-full lg:w-[55%]">
+            <div className="order-2 w-full lg:w-[56%]">
               <div
                 ref={videoContainerRef}
-                className="group relative aspect-video overflow-hidden rounded-2xl bg-charcoal-800 shadow-[0_24px_64px_-16px_rgba(0,0,0,0.75)] ring-1 ring-brand-gold/20"
+                className="hero-home-video group relative aspect-video w-full overflow-hidden rounded-2xl bg-charcoal-800 shadow-[0_24px_64px_-16px_rgba(0,0,0,0.75)] ring-1 ring-brand-gold/20"
               >
                 <div className="absolute inset-0 overflow-hidden rounded-[inherit] bg-charcoal-800">
                   {shouldLoadVideo ? (
@@ -128,7 +131,7 @@ export default function HomeHeroSections() {
                         loop
                         playsInline
                         preload="metadata"
-                        poster="/images/hero-video-poster.jpg"
+                        poster="/images/hero-video-poster.webp"
                       >
                         <source
                           src="/videos/hero.mp4"
@@ -144,12 +147,12 @@ export default function HomeHeroSections() {
                   ) : (
                     <div className="absolute inset-0 origin-center transition-transform duration-700 group-hover:scale-[1.02]">
                       <Image
-                        src="/images/hero-video-poster.jpg"
-                        alt="Hero video poster"
+                        src="/images/hero-video-poster.webp"
+                        alt=""
+                        aria-hidden
                         fill
                         className="object-cover"
                         sizes="(min-width: 1024px) 55vw, 100vw"
-                        loading="eager"
                         style={{
                           objectFit: "cover",
                           transform: "scale(1.04)",
@@ -160,6 +163,23 @@ export default function HomeHeroSections() {
                   )}
                 </div>
               </div>
+            </div>
+            <div className="order-3 flex w-full flex-col gap-4 lg:hidden">
+              <Link
+                href="/series"
+                className="brand-btn-primary w-full justify-center rounded-full px-7 py-3 text-base"
+              >
+                <span className="material-symbols-outlined" aria-hidden>
+                  play_circle
+                </span>
+                Watch Featured Series
+              </Link>
+              <Link
+                href="/movies"
+                className="brand-btn-secondary w-full justify-center rounded-full border-2 px-7 py-3 text-base text-brand-gold"
+              >
+                Explore Movies
+              </Link>
             </div>
           </div>
         </div>
@@ -193,7 +213,7 @@ export default function HomeHeroSections() {
                   className="brand-card brand-expertise-card group relative h-full overflow-hidden p-8"
                 >
                   <div className="brand-icon-wrap mb-6 h-14 w-14">
-                    <span className="material-symbols-outlined text-3xl">
+                    <span className="material-symbols-outlined text-3xl" aria-hidden>
                       {card.icon}
                     </span>
                   </div>

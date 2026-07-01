@@ -62,7 +62,7 @@ export default async function MoviesPage() {
   return (
     <div className="min-h-screen cinematic-page font-display text-white">
       <SiteHeader />
-      <main className="mx-auto w-full max-w-[1200px] flex-1 px-4 py-8 md:px-10">
+      <main className="mx-auto w-full max-w-[1200px] flex-1 px-4 py-8 pb-24 md:px-10">
         <RevealOnScroll>
         <section className="mb-12 flex flex-col gap-8 md:flex-row">
           <div className="flex-1 space-y-6">
@@ -70,7 +70,8 @@ export default async function MoviesPage() {
               <div className="flex size-[4.5rem] shrink-0 items-center justify-center rounded-full border-2 border-brand-gold bg-brand-bg-deep p-2.5">
                 <Image
                   src={BRAND_LOGO_PATH}
-                  alt="Feempipo logo"
+                  alt=""
+                  aria-hidden
                   width={56}
                   height={56}
                   sizes="56px"
@@ -83,7 +84,7 @@ export default async function MoviesPage() {
                   Feempipo
                 </h1>
                 <p className="flex items-center gap-2 font-display text-lg font-semibold text-brand-gold">
-                  <span className="material-symbols-outlined text-sm">
+                  <span className="material-symbols-outlined text-sm" aria-hidden>
                     verified
                   </span>
                   Official Channel
@@ -103,14 +104,14 @@ export default async function MoviesPage() {
               creativity, and high production quality that sets Feempipo apart
               from the standard YouTube movie format.
             </p>
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-col gap-4 sm:flex-row sm:flex-wrap">
               <a
                 href={FEEMPIPO_CHANNEL_URL}
                 target="_blank"
-                rel="noreferrer"
-                className="flex items-center gap-2 rounded-xl bg-brand-gold px-8 py-3 text-base font-bold text-charcoal-900 transition-transform hover:scale-105"
+                rel="noopener noreferrer"
+                className="flex w-full items-center justify-center gap-2 rounded-xl bg-brand-gold px-8 py-3 text-base font-bold text-charcoal-900 transition-transform hover:scale-105 sm:w-auto"
               >
-                <span className="material-symbols-outlined">
+                <span className="material-symbols-outlined" aria-hidden>
                   notifications_active
                 </span>
                 Subscribe
@@ -118,8 +119,8 @@ export default async function MoviesPage() {
               <a
                 href="https://www.youtube.com/@feempipo/playlists"
                 target="_blank"
-                rel="noreferrer"
-                className="rounded-xl border border-brand-gold/30 bg-brand-gold/10 px-8 py-3 text-base font-bold text-brand-gold transition-all hover:bg-brand-gold/20"
+                rel="noopener noreferrer"
+                className="flex w-full items-center justify-center rounded-xl border border-brand-gold/30 bg-brand-gold/10 px-8 py-3 text-base font-bold text-brand-gold transition-all hover:bg-brand-gold/20 sm:w-auto"
               >
                 View Playlists
               </a>
@@ -142,17 +143,20 @@ export default async function MoviesPage() {
                 <a
                   href={toYouTubeWatchUrl(movie.id || "")}
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                 >
                   <div className="relative mb-4 aspect-video overflow-hidden rounded-xl">
-                    <img
+                    <Image
                       src={movie.thumbnail}
                       alt={`${movie.title} movie thumbnail`}
-                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                      className="object-cover transition-transform duration-500 group-hover:scale-110"
+                      loading="lazy"
                     />
                     <div className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 transition-opacity group-hover:opacity-100">
                       <div className="flex size-14 translate-y-4 items-center justify-center rounded-full bg-brand-gold transition-transform group-hover:translate-y-0">
-                        <span className="material-symbols-outlined text-3xl text-charcoal-900">
+                        <span className="material-symbols-outlined text-3xl text-charcoal-900" aria-hidden>
                           play_arrow
                         </span>
                       </div>
@@ -175,7 +179,7 @@ export default async function MoviesPage() {
             <a
               href="https://www.youtube.com/playlist?list=PL8TvvF5M4b8NvDATYmZSuHpGlxGOjKGZO"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="rounded-full border border-brand-gold/20 bg-brand-gold/10 px-10 py-3 font-bold text-brand-gold transition-all hover:bg-brand-gold hover:text-charcoal-900"
             >
               More Movies on YouTube
@@ -198,7 +202,7 @@ export default async function MoviesPage() {
           <a
             href="https://www.youtube.com/@feempipo/community"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             className="shrink-0 rounded-xl bg-brand-bg px-8 py-4 font-semibold tracking-tight text-brand-gold transition-transform hover:scale-105 active:scale-95"
           >
             Join Community

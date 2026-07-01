@@ -1,8 +1,7 @@
 import HomePageLayout from "./components/HomePageLayout";
 import HomeHeroSections from "./components/HomeHeroSections";
 import HomeTrendingSeries from "./components/HomeTrendingSeries";
-
-const SITE = "https://feempipo.com";
+import { SITE_URL } from "../lib/seo";
 
 /** Matches `HOME_PAGE_REVALIDATE_SECONDS` / RSS in `src/lib/youtubeCache.js`. */
 export const revalidate = 172800;
@@ -17,7 +16,7 @@ export const metadata = {
     description:
       "Premium African movies, series, documentaries, and comedy from Feempipo.",
     type: "website",
-    url: SITE,
+    url: SITE_URL,
     locale: "en_US",
     siteName: "Feempipo",
     images: [
@@ -30,7 +29,7 @@ export const metadata = {
     ],
     videos: [
       {
-        url: `${SITE}/videos/hero.mp4`,
+        url: `${SITE_URL}/videos/hero.mp4`,
         width: 1280,
         height: 720,
         type: "video/mp4",
@@ -59,8 +58,8 @@ const homeJsonLd = {
   "@graph": [
     {
       "@type": "WebSite",
-      "@id": `${SITE}/#website`,
-      url: SITE,
+      "@id": `${SITE_URL}/#website`,
+      url: SITE_URL,
       name: "Feempipo",
       description:
         "Multimedia production company creating premium African movies, series, documentaries, and comedy.",
@@ -68,15 +67,15 @@ const homeJsonLd = {
     },
     {
       "@type": "VideoObject",
-      "@id": `${SITE}/#hero-video`,
+      "@id": `${SITE_URL}/#hero-video`,
       name: "Feempipo showreel",
       description: "Feempipo cinematic production highlight reel.",
-      thumbnailUrl: `${SITE}/images/hero-video-poster.jpg`,
-      contentUrl: `${SITE}/videos/hero.mp4`,
-      embedUrl: `${SITE}/`,
+      thumbnailUrl: `${SITE_URL}/images/hero-video-poster.webp`,
+      contentUrl: `${SITE_URL}/videos/hero.mp4`,
+      embedUrl: SITE_URL,
       uploadDate: "2025-01-01T12:00:00+00:00",
       isFamilyFriendly: true,
-      publisher: { "@id": `${SITE}/#website` },
+      publisher: { "@id": `${SITE_URL}/#website` },
     },
   ],
 };

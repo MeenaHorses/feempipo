@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { buildPageMetadata } from "../../lib/seo";
 import SiteHeader from "../components/SiteHeader";
 import SiteFooter from "../components/SiteFooter";
@@ -39,7 +40,7 @@ const TEAM_MEMBERS = [
     name: "Simpa Samson",
     role: "Head of Documentary",
     bio: "Leads documentary projects, delivering compelling real-world stories.",
-    image: "/images/team/Simpa.png",
+    image: "/images/team/Simpa.webp",
     instagram: "https://www.instagram.com/saintonios/",
     x: "https://x.com/saintonios",
   },
@@ -78,37 +79,39 @@ export default function MeetTheTeamPage() {
   return (
     <div className="min-h-screen cinematic-page font-display text-white antialiased">
       <SiteHeader />
-      <main className="mx-auto max-w-7xl px-4 pb-16 pt-10 sm:px-6 sm:pb-20 sm:pt-12">
-        <section className="mb-24">
-          <div className="grid grid-cols-1 items-end gap-12 lg:grid-cols-12">
-            <RevealOnScroll className="lg:col-span-8">
-              <div>
-                <h1 className="mb-8 text-5xl font-black leading-[0.95] tracking-tight text-brand-gold sm:text-6xl md:text-7xl lg:text-8xl">
-                  The Creative <br />
-                  Force Behind <br />
-                  Feempipo.
-                </h1>
-                <p className="max-w-2xl font-sans text-lg font-normal leading-relaxed text-brand-muted md:text-xl lg:text-2xl">
-                  At Feempipo, filmmaking is a collaborative art. From concept to
-                  screen, our talented team combines creativity, technical
-                  expertise, and passion for storytelling.
-                </p>
-              </div>
-            </RevealOnScroll>
+      <main className="mx-auto max-w-7xl px-4 pt-12 pb-24 sm:px-6 lg:px-8">
+        <RevealOnScroll>
+          <div>
+            <p className="mb-4 text-sm font-bold tracking-widest text-brand-gold uppercase">
+              Our Team
+            </p>
+            <h1 className="mb-4 text-4xl font-black leading-tight tracking-tight text-white md:text-5xl">
+              The Creative <br />
+              Force Behind <br />
+              <span className="text-brand-gold">Feempipo.</span>
+            </h1>
+            <p className="max-w-2xl text-lg leading-relaxed text-brand-text">
+              At Feempipo, filmmaking is a collaborative art. From concept to
+              screen, our talented team combines creativity, technical
+              expertise, and passion for storytelling.
+            </p>
           </div>
-        </section>
+        </RevealOnScroll>
 
         {/* Whole grid reveals together (homepage-style); 3 cards top, 2 centered bottom (lg+). */}
         <RevealOnScroll>
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-6">
+          <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-6">
             {TEAM_MEMBERS.map((member, index) => (
               <div key={member.name} className={cardGridPlacement(index)}>
                 <div
                   className={`group relative h-full overflow-hidden rounded-xl bg-charcoal-800 ${CARD_BOX}`}
                 >
-                  <img
+                  <Image
                     src={member.image}
                     alt={member.name}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    priority={index < 3}
                     className={imageClass(member)}
                   />
                   <div
@@ -129,11 +132,11 @@ export default function MeetTheTeamPage() {
                       <a
                         href={member.instagram}
                         target="_blank"
-                        rel="noreferrer"
+                        rel="noopener noreferrer"
                         className="text-brand-gold transition-transform hover:scale-110"
                         aria-label={`${member.name} Instagram`}
                       >
-                        <svg viewBox="0 0 24 24" className="h-6 w-6 fill-current">
+                        <svg viewBox="0 0 24 24" className="h-6 w-6 fill-current" aria-hidden>
                           <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm9.5 2a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3ZM12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10Zm0 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6Z" />
                         </svg>
                       </a>
@@ -141,11 +144,11 @@ export default function MeetTheTeamPage() {
                         <a
                           href={member.x}
                           target="_blank"
-                          rel="noreferrer"
+                          rel="noopener noreferrer"
                           className="text-brand-gold transition-transform hover:scale-110"
                           aria-label={`${member.name} X`}
                         >
-                          <svg viewBox="0 0 24 24" className="h-6 w-6 fill-current">
+                          <svg viewBox="0 0 24 24" className="h-6 w-6 fill-current" aria-hidden>
                             <path d="M18.9 2H22l-6.9 7.9L23 22h-6.2l-4.9-6.6L6 22H2.9l7.4-8.5L1 2h6.3l4.4 6L18.9 2Zm-1.1 18h1.7L6.2 3.9H4.4L17.8 20Z" />
                           </svg>
                         </a>

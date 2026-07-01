@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { toYouTubeWatchUrl } from "../../data/media";
 
@@ -75,10 +76,10 @@ export default function YawaSkitsEpisodesSection({
           className="flex items-center gap-1 text-sm font-bold text-brand-gold hover:underline"
           href={YOUTUBE_VIDEOS_URL}
           target="_blank"
-          rel="noreferrer"
+          rel="noopener noreferrer"
         >
           View All{" "}
-          <span className="material-symbols-outlined text-sm">chevron_right</span>
+          <span className="material-symbols-outlined text-sm" aria-hidden>chevron_right</span>
         </a>
       </div>
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
@@ -87,16 +88,19 @@ export default function YawaSkitsEpisodesSection({
             key={video.id ? String(video.id) : `episode-${index}`}
             className="group cursor-pointer"
           >
-            <a href={toYouTubeWatchUrl(video.id)} target="_blank" rel="noreferrer">
+            <a href={toYouTubeWatchUrl(video.id)} target="_blank" rel="noopener noreferrer">
               <div className="relative mb-3 aspect-video overflow-hidden rounded-xl">
-                <img
+                <Image
                   src={video.thumbnail}
                   alt={`${video.title} episode thumbnail`}
-                  className="h-full w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  className="object-cover transition-transform duration-500 group-hover:scale-110"
+                  loading="lazy"
                 />
                 <div className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 transition-opacity group-hover:opacity-100">
                   <div className="flex size-14 translate-y-4 items-center justify-center rounded-full bg-brand-gold transition-transform group-hover:translate-y-0">
-                    <span className="material-symbols-outlined text-3xl text-charcoal-900">
+                    <span className="material-symbols-outlined text-3xl text-charcoal-900" aria-hidden>
                       play_arrow
                     </span>
                   </div>
@@ -129,7 +133,7 @@ export default function YawaSkitsEpisodesSection({
           <a
             href={YOUTUBE_VIDEOS_URL}
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             className="rounded-full border border-brand-gold/20 bg-brand-gold/10 px-10 py-3 font-bold text-brand-gold transition-all hover:bg-brand-gold hover:text-charcoal-900"
           >
             More episodes on YouTube

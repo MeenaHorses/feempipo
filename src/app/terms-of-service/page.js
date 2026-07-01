@@ -88,7 +88,7 @@ export default function TermsOfServicePage() {
               <article id="use-of-content" className="scroll-mt-28">
                 <div className="mb-6 flex items-center gap-4">
                   <div className="flex size-12 items-center justify-center rounded-xl bg-brand-gold/10 text-brand-gold">
-                    <span className="material-symbols-outlined">movie_filter</span>
+                    <span className="material-symbols-outlined" aria-hidden>movie_filter</span>
                   </div>
                   <h2 className="text-3xl font-extrabold tracking-tight text-white">
                     1. Use of Content
@@ -110,7 +110,7 @@ export default function TermsOfServicePage() {
               <article id="user-conduct" className="scroll-mt-28">
                 <div className="mb-6 flex items-center gap-4">
                   <div className="flex size-12 items-center justify-center rounded-xl bg-brand-gold/10 text-brand-gold">
-                    <span className="material-symbols-outlined">shield_person</span>
+                    <span className="material-symbols-outlined" aria-hidden>shield_person</span>
                   </div>
                   <h2 className="text-3xl font-extrabold tracking-tight text-white">
                     2. User Conduct
@@ -131,7 +131,7 @@ export default function TermsOfServicePage() {
               <article id="submissions" className="scroll-mt-28">
                 <div className="mb-6 flex items-center gap-4">
                   <div className="flex size-12 items-center justify-center rounded-xl bg-brand-gold/10 text-brand-gold">
-                    <span className="material-symbols-outlined">upload_file</span>
+                    <span className="material-symbols-outlined" aria-hidden>upload_file</span>
                   </div>
                   <h2 className="text-3xl font-extrabold tracking-tight text-white">
                     3. Submissions &amp; Collaborations
@@ -152,7 +152,7 @@ export default function TermsOfServicePage() {
               <article id="third-party-links" className="scroll-mt-28">
                 <div className="mb-6 flex items-center gap-4">
                   <div className="flex size-12 items-center justify-center rounded-xl bg-brand-gold/10 text-brand-gold">
-                    <span className="material-symbols-outlined">link</span>
+                    <span className="material-symbols-outlined" aria-hidden>link</span>
                   </div>
                   <h2 className="text-3xl font-extrabold tracking-tight text-white">
                     4. Third-Party Links
@@ -167,7 +167,7 @@ export default function TermsOfServicePage() {
               <article id="disclaimer" className="scroll-mt-28">
                 <div className="mb-6 flex items-center gap-4">
                   <div className="flex size-12 items-center justify-center rounded-xl bg-brand-gold/10 text-brand-gold">
-                    <span className="material-symbols-outlined">gavel</span>
+                    <span className="material-symbols-outlined" aria-hidden>gavel</span>
                   </div>
                   <h2 className="text-3xl font-extrabold tracking-tight text-white">
                     5. Disclaimer
@@ -185,7 +185,7 @@ export default function TermsOfServicePage() {
               <article id="changes" className="scroll-mt-28">
                 <div className="mb-6 flex items-center gap-4">
                   <div className="flex size-12 items-center justify-center rounded-xl bg-brand-gold/10 text-brand-gold">
-                    <span className="material-symbols-outlined">update</span>
+                    <span className="material-symbols-outlined" aria-hidden>update</span>
                   </div>
                   <h2 className="text-3xl font-extrabold tracking-tight text-white">
                     6. Changes to Terms
