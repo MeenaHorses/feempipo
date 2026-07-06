@@ -88,12 +88,12 @@ export const metadata = {
   },
   icons: {
     icon: [
-      { url: "/favicon.ico", sizes: "48x48", type: "image/x-icon" },
-      { url: "/favicon.png", type: "image/png", sizes: "128x128" },
-      { url: "/logo192.png", type: "image/png", sizes: "192x192" },
-      { url: "/logo512.png", type: "image/png", sizes: "512x512" },
+      { url: "/favicon.ico?v=2", sizes: "48x48", type: "image/x-icon" },
+      { url: "/favicon.png?v=2", type: "image/png", sizes: "128x128" },
+      { url: "/logo192.png?v=2", type: "image/png", sizes: "192x192" },
+      { url: "/logo512.png?v=2", type: "image/png", sizes: "512x512" },
     ],
-    apple: [{ url: "/logo192.png", sizes: "192x192", type: "image/png" }],
+    apple: [{ url: "/logo192.png?v=2", sizes: "192x192", type: "image/png" }],
   },
 };
 
@@ -106,7 +106,11 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
         <link
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap"
@@ -118,7 +122,9 @@ export default function RootLayout({ children }) {
           }}
         />
       </head>
-      <body className={`${montserrat.variable} ${sourceSans.variable} font-sans antialiased`}>
+      <body
+        className={`${montserrat.variable} ${sourceSans.variable} font-sans antialiased`}
+      >
         <div className="bg-abstract-motion min-h-screen">
           <div className="blob-1" aria-hidden />
           <div className="blob-2" aria-hidden />
