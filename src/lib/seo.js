@@ -2,6 +2,8 @@
 export const SITE_URL = "https://feempipo.com";
 
 export const DEFAULT_OG_IMAGE_PATH = "/og-image.jpg";
+export const BRAND_LOGO_PATH = "/logo192.png";
+export const ORGANIZATION_LOGO_URL = `${SITE_URL}${BRAND_LOGO_PATH}`;
 
 /**
  * Standard page metadata for App Router (merges with root layout `metadataBase` + title template).
